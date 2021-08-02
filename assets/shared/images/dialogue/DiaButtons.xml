@@ -2,8 +2,8 @@
 <TextureAtlas imagePath="DiaButtons.png">
 	<!-- Created with Adobe Animate version 20.5.0.29329 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="MainGlow0000" x="0" y="0" width="237" height="32"/>
-	<SubTexture name="Skip0000" x="0" y="32" width="237" height="32"/>
-	<SubTexture name="SkipGlow0000" x="0" y="64" width="237" height="32"/>
-	<SubTexture name="mainMenu0000" x="0" y="96" width="237" height="32"/>
+	<SubTexture name="MainGlow0000" x="0" y="0" width="256" height="32"/>
+	<SubTexture name="Skip0000" x="0" y="32" width="256" height="32"/>
+	<SubTexture name="SkipGlow0000" x="0" y="64" width="256" height="32"/>
+	<SubTexture name="mainMenu0000" x="0" y="96" width="256" height="32"/>
 </TextureAtlas>

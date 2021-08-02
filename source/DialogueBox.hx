@@ -11,6 +11,7 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
+import flixel.input.FlxPointer;
 
 using StringTools;
 
@@ -337,17 +338,11 @@ class DialogueBox extends FlxSpriteGroup
 
 		FlxG.mouse.visible = true;
 
-
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 		add(handSelect);
-
-		if (!talkingRight)
-		{
-			// box.flipX = true;
-		}
 
 		dropText = new FlxText(50, 500, Std.int(FlxG.width * 0.9), "", 46);
 		dropText.font = 'Plunge';
@@ -361,11 +356,12 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue.delay = 0.04;
 		add(swagDialogue);
 
-		main = new FlxSprite(419, 656);
+		main = new FlxSprite(419, 660);
 		main.frames = Paths.getSparrowAtlas('dialogue/DiaButtons');
 		main.animation.addByPrefix('idle', 'mainMenu', 0, false);
 		main.animation.addByPrefix('over', 'MainGlow', 0, false);
 		main.animation.play('idle');
+		main.updateHitbox();
 		main.antialiasing = true;
 		add(main);
 
@@ -374,6 +370,8 @@ class DialogueBox extends FlxSpriteGroup
 		end.animation.addByPrefix('normal', 'Skip', 0, false);
 		end.animation.addByPrefix('glow', 'SkipGlow', 0, false);
 		end.animation.play('normal');
+		end.updateHitbox();
+		end.scrollFactor.set();
 		end.antialiasing = true;
 		add(end);
 
@@ -472,13 +470,10 @@ class DialogueBox extends FlxSpriteGroup
 
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
+						for(key in portraitMap.keys())
+							portraitMap[key].alpha -= 1 / 5;
 						box.alpha -= 1 / 5;
-						tea.alpha -= 1 / 5;
-						fever.alpha -= 1 / 5;
-						mako.alpha -= 1 / 5;
 						bgFade.alpha -= 1 / 5 * 0.7;
-						portraitLeft.visible = false;
-						portraitRight.visible = false;
 						swagDialogue.alpha -= 1 / 5;
 						dropText.alpha = swagDialogue.alpha;
 					}, 5);
@@ -655,9 +650,9 @@ class DialogueBox extends FlxSpriteGroup
 					else if(curCharacter.startsWith('wolfie') || curCharacter.startsWith('wee'))
 					{
 						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('WeenWolfie-Beep'), 0.6)];
-							hidePortraits('wolfie');
-							wolfie.flipX = true;
-							wolfie.animation.play(curCharacter);
+						hidePortraits('wolfie');
+						wolfie.flipX = true;
+						wolfie.animation.play(curCharacter);
 					}
 					else if(curCharacter.startsWith('yukichi'))
 					{
@@ -737,8 +732,6 @@ class DialogueBox extends FlxSpriteGroup
 					FlxG.sound.music.stop();
 				case 'sfx': 
 					FlxG.sound.play(Paths.music(dialogueList[0]));
-				case 'stfusfx':
-					trace('mf are you STUPID HOLY SHIT THIS WOULD NEVER WORK');
 				case 'slow':
 					swagDialogue.delay = 0.25;
 				case 'normal': 

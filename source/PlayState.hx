@@ -262,6 +262,8 @@ class PlayState extends MusicBeatState
 				storyDifficultyText = "Normal";
 			case 2:
 				storyDifficultyText = "Hard";
+			case 3:
+				storyDifficultyText = "Hard+";
 		}
 
 		iconRPC = SONG.player2;
@@ -466,16 +468,6 @@ class PlayState extends MusicBeatState
 						}
 					}
 
-					var overlayShit:FlxSprite = new FlxSprite(-500, -600).loadGraphic(Paths.image('limo/limoOverlay','week4'));
-					overlayShit.alpha = 0.5;
-					// add(overlayShit);
-
-					// var shaderBullshit = new BlendModeEffect(new OverlayShader(), FlxColor.RED);
-
-					// FlxG.camera.setFilters([new ShaderFilter(cast shaderBullshit.shader)]);
-
-					// overlayShit.shader = shaderBullshit;
-
 					var limoTex = Paths.getSparrowAtlas('limo/limoDrive','week4');
 
 					limo = new FlxSprite(-120, 550);
@@ -513,16 +505,6 @@ class PlayState extends MusicBeatState
 								grpLimoDancers.add(dancer);
 						}
 					}
-
-					var overlayShit:FlxSprite = new FlxSprite(-500, -600).loadGraphic(Paths.image('limoNightmo/limoOverlay','week4'));
-					overlayShit.alpha = 0.5;
-					// add(overlayShit);
-
-					// var shaderBullshit = new BlendModeEffect(new OverlayShader(), FlxColor.RED);
-
-					// FlxG.camera.setFilters([new ShaderFilter(cast shaderBullshit.shader)]);
-
-					// overlayShit.shader = shaderBullshit;
 
 					var limoTex = Paths.getSparrowAtlas('limoNight/limoDrive','week4');
 
@@ -761,11 +743,7 @@ class PlayState extends MusicBeatState
 
 		dad = new Character(100, 100, SONG.player2);
 
-		var camPos:FlxPoint;
-		if(isStoryMode) 
-			camPos = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
-		else
-			camPos = new FlxPoint(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
+		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
 		switch (SONG.player2)
 		{
@@ -829,7 +807,8 @@ class PlayState extends MusicBeatState
 		
 		}
 
-
+		if(!isStoryMode)
+			camPos.set(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
@@ -1038,7 +1017,7 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 
 		// Add Kade Engine watermark
-		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + (Main.watermarks ? " - KE " + MainMenuState.kadeEngineVer : ""), 16);
+		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + CoolUtil.difficultyArray[storyDifficulty] + (Main.watermarks ? " - KE " + MainMenuState.kadeEngineVer : ""), 16);
 		kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		add(kadeEngineWatermark);
@@ -1127,10 +1106,10 @@ class PlayState extends MusicBeatState
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
-		doof.cameras = [camHUD];
 		kadeEngineWatermark.cameras = [camHUD];
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
+		doof.cameras = [camHUD];
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -3028,10 +3007,10 @@ class PlayState extends MusicBeatState
 				{
 					var difficulty:String = "";
 
-					if (storyDifficulty == 0)
+					if (storyDifficulty == 0 || storyDifficulty == 4)
 						difficulty = '-easy';
 
-					if (storyDifficulty == 2)
+					if (storyDifficulty == 2 || storyDifficulty == 3)
 						difficulty = '-hard';
 
 					trace('LOADING NEXT SONG');
@@ -3999,16 +3978,19 @@ class PlayState extends MusicBeatState
 		wiggleShit.update(Conductor.crochet);
 
 		// HARDCODING FOR MILF ZOOMS!
-		if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat < 200 && camZooming && FlxG.camera.zoom < 1.35)
+		if(!startedCountdown)
 		{
-			FlxG.camera.zoom += 0.015;
-			camHUD.zoom += 0.03;
-		}
-
-		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
-		{
-			FlxG.camera.zoom += 0.015;
-			camHUD.zoom += 0.03;
+			if (curSong.toLowerCase() == 'milf' && curBeat >= 168 && curBeat < 200 && camZooming && FlxG.camera.zoom < 1.35)
+			{
+				FlxG.camera.zoom += 0.015;
+				camHUD.zoom += 0.03;
+			}
+	
+			if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
+			{
+				FlxG.camera.zoom += 0.015;
+				camHUD.zoom += 0.03;
+			}
 		}
 
 		iconP1.setGraphicSize(Std.int(iconP1.width + 30));
@@ -4053,17 +4035,7 @@ class PlayState extends MusicBeatState
 					santa.animation.play('idle', true);
 				}
 
-			case 'limo':
-				if(FlxG.save.data.distractions){
-					grpLimoDancers.forEach(function(dancer:BackgroundDancer)
-						{
-							dancer.dance();
-						});
-		
-						if (FlxG.random.bool(10) && fastCarCanDrive)
-							fastCarDrive();
-				}
-			case 'limonight':
+			case 'limo' | 'limonight':
 				if(FlxG.save.data.distractions){
 					grpLimoDancers.forEach(function(dancer:BackgroundDancer)
 						{

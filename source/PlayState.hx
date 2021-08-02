@@ -1104,7 +1104,7 @@ class PlayState extends MusicBeatState
 			add(moreDark);
 
 		}
-		if(SONG.song.toLowerCase() == 'honey')
+		if(SONG.song.toLowerCase() == 'crucify')
 		{
 
 			hitit = new FlxSprite(97, 265);
@@ -2010,6 +2010,7 @@ class PlayState extends MusicBeatState
 			{
 				health += 0.3;
 				pressedOnce = true;
+				hitit.visible = false;
 			}
 		}
 
@@ -3938,6 +3939,20 @@ class PlayState extends MusicBeatState
 		if (curBeat == 96 && curSong =='Party-Crasher')
 		{
 			shake = false;
+		}
+		if (curBeat == 47 && curSong =='Crucify')
+		{
+			if(storyDifficulty == 3)
+			{
+				health1 = true;
+			}
+		}
+		if (curBeat == 50 && curSong =='Crucify')
+		{
+			if(storyDifficulty == 3)
+			{
+				health1 = false;
+			}
 		}
 
 

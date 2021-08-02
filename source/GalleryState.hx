@@ -37,7 +37,8 @@ class GalleryState extends MusicBeatState
         new GalleryImage('gallery/room', 'Concept for the room used in "Jukebox".', 'Jukebox Concept'),
         new GalleryImage('gallery/weebStreet', 'BG used in a cut ENA Week.', 'Cut ENA \nWeek'),
         new GalleryImage('gallery/week4Beingworkedon', 'Week 4 being worked on.', 'Week 4'),
-        new GalleryImage('gallery/yukichi', 'First Concept for Yukichi.', 'Yukichi Sprites')
+        new GalleryImage('gallery/yukichi', 'First Concept for Yukichi.', 'Yukichi Sprites'),
+        new GalleryImage('gallery/TeedyNG', 'Fanart of Pepper Demon made by @TeedyNG on twitter!', 'Fanart')
     ];
 
     var image:FlxSprite;

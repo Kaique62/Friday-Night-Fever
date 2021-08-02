@@ -214,7 +214,7 @@ class DialogueBox extends FlxSpriteGroup
 		add(mako);
 		mako.visible = false;
 
-		impy = new FlxSprite(830, -11);
+		impy = new FlxSprite(830, -50);
 		impy.frames = Paths.getSparrowAtlas('dialogue/impy');
 		impy.animation.addByPrefix('impy', 'impy idle', 24, false);
 		impy.scrollFactor.set();

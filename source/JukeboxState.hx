@@ -28,6 +28,12 @@ class JukeboxState extends MusicBeatState
         new JukeboxSong('Honey', 'honey', 'week4', 130),
         new JukeboxSong('Bunnii', 'bunni', 'week4', 165),
         new JukeboxSong('Throw It Back', 'throwItback', 'week4', 160),
+        new JukeboxSong('Mild', 'mild', 'week5', 100),
+        new JukeboxSong('Spice', 'spice', 'week5', 150),
+        new JukeboxSong('Party Crasher', 'party', 'week5', 159),
+        new JukeboxSong('Ur Girl', 'girl', 'week6', 144),
+        new JukeboxSong('Chicken Sandwich', 'chicken', 'week6', 150),
+        new JukeboxSong('Funkin God', 'funkingod', 'flippy', 190),
         new JukeboxSong('BETA VIP', 'VIP', 'extras', 155),
     ];
     var curSelected:Int = 0;

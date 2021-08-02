@@ -9,12 +9,15 @@ Your girlfriend is also from space, and you're hiding some dark secrets from her
 # Changelog
 
 ### v1.0.1 [Unreleased]
-- Main menu now has effects / transitions
+- Main menu now has new effects and transitions
 - Added casual sprites to week 6 dialogue
 - Fixed some week 4 dialogue expressions not working
 - Removed base game songs / characters from the files
-- Optimized gallery images
+- Optimized gallery images to not freeze the game on certain images
 - New images in gallery
+- Fixed tracklist problems after completing a week
+- Fixed funkin-god not having the correct game over animation
+
 ### v1.0
 - the mod came out lmao
 

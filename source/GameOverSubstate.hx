@@ -20,7 +20,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		var daBf:String = '';
 		switch (PlayState.SONG.player1)
 		{
-			case 'bf-pixel':
+			case 'bf-pixel' | 'bf-pixeldemon':
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
 			default:

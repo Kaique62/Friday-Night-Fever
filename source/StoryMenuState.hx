@@ -23,15 +23,7 @@ class StoryMenuState extends MusicBeatState
 {
 	var scoreText:FlxText;
 
-	public static var weekData:Array<Dynamic> = [
-		['Tutorial'],
-		['Metamorphosis', 'Void', 'Down-bad'],
-		['Thriller', 'Legendary', 'Bazinga', 'Crucify'],
-		['Makomelon', 'VIP', "Farmed"],
-		['Honey', "Bunnii", "Throw-it-back"],
-		['Mild', 'Spice', 'Party-Crasher'],
-		['Ur-girl', 'Chicken-sandwich', 'Funkin-god']
-	];
+	public static var weekData:Array<Dynamic> = [];
 	var curDifficulty:Int = 1;
 
 	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true];
@@ -75,6 +67,16 @@ class StoryMenuState extends MusicBeatState
 
 	override function create()
 	{
+		// VERY SHITTY SOLUTION TO THE WEEKDATA RESETTING PROBLEM LMAO BUT ITS WORKS
+		weekData = [
+			['Tutorial'],
+			['Metamorphosis', 'Void', 'Down-bad'],
+			['Thriller', 'Legendary', 'Bazinga', 'Crucify'],
+			['Makomelon', 'VIP', "Farmed"],
+			['Honey', "Bunnii", "Throw-it-back"],
+			['Mild', 'Spice', 'Party-Crasher'],
+			['Ur-girl', 'Chicken-sandwich', 'Funkin-god']
+		];
 
 		#if windows
 		// Updating Discord Rich Presence

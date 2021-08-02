@@ -111,8 +111,11 @@ class MainMenuState extends MusicBeatState
 			selectedSomethin = true;
 			menuItem.x += 550;
 			FlxTween.tween(menuItem, {x: FlxG.width - menuItem.width + 5}, 0.65 + (0.12 * i), {ease:FlxEase.smoothStepInOut, onComplete:function(twn:FlxTween){
+				menuItem.updateHitbox();
 				if(menuItem.ID == optionShit.length - 1)
+				{
 					selectedSomethin = false;
+				}
 			}});
 		}
 
@@ -144,7 +147,7 @@ class MainMenuState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		elapsedTimer += elapsed;
-		if(elapsedTimer > 1.4)
+		if(elapsedTimer > 0.84)
 		{
 			elapsedTimer = 0;
 			if(optionShit[curSelected] == 'gallery')

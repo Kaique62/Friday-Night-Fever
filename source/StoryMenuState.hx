@@ -398,13 +398,13 @@ class StoryMenuState extends MusicBeatState
 		txtTracklist.text = "Tracks\n";
 		var stringThing:Array<String> = weekData[curWeek];
 
+		var hiddenSongs:Array<String> = ['Bazinga', 'Crucify'];
 		for (i in stringThing)
 		{
-			txtTracklist.text += "\n" + i;
+			if(!hiddenSongs.contains(i))
+				txtTracklist.text += "\n" + i;
 		}
-		var hiddenSongs:Array<String> = ['Bazinga', 'Crucify'];
-		for(i in hiddenSongs)
-			txtTracklist.text = StringTools.replace(txtTracklist.text, '\n$i', '');
+
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.x -= FlxG.width * 0.35;

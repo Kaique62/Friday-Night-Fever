@@ -1151,11 +1151,14 @@ class PlayState extends MusicBeatState
 						});
 					});
 				case 'ur-girl':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'chicken-sandwich':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					FlxG.sound.play(Paths.sound('ANGRY'));
 					NOTSenpai(doof);
 				case 'funkin-god':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'makomelon':
 					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
@@ -1167,32 +1170,46 @@ class PlayState extends MusicBeatState
 					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'tutorial':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'party-crasher':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'metamorphosis':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'void':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'down-bad':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'bazinga':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					jumpscare(doof);
 				case 'crucify':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'thriller':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'legendary':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'honey':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'bunnii':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'throw-it-back':
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'mild':  
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				case 'spice': 
+					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);
 				default:
 					startCountdown();
@@ -1987,7 +2004,7 @@ class PlayState extends MusicBeatState
 
 			if (FlxG.keys.justPressed.SPACE)
 			{
-				health += 0.3;
+				health += 0.7;
 				pressedOnce = true;
 				hitit.visible = false;
 			}

@@ -17,7 +17,7 @@
 :feverconfuse: Huh?
 :bg: hunni
 :song: honeyinst
-:hunnismile: So, you're the mayor? I've seen your face around, but you're a lot shorter than I expected. I'm Hunni, but there's no need to tell you my name.
+:narrator: So, you're the mayor? I've seen your face around, but you're a lot shorter than I expected. I'm Hunni, but there's no need to tell you my name.
 :hunnismile: Cause after I beat you, the rest of the world will know soon.
 :impy: Hey I'm Impy. You are pretty short.
 :feverpointtwo: Not fair to say that when you're on top of that limo.
@@ -43,7 +43,7 @@
 :feverpointtwo: I don't need someone backing me up to win! Tea's just a bonus!
 :feversilly: A very, very hot bonus.
 :hunnismile: I can respect that mentality. I'm also used to having the most lovely individual in the world cheering me on~.
-:narrator: Impy: Aww! Hunni-
+:impy: Impy: Aww! Hunni-
 :hunnismile: My cute bunny! And this one, and this one! Come to mama! You're gonna dance so well for me, aren't you?~
 :impy: Bitch.
 :feverpointtwo: Whatever! You can have them cheer you on all you want, it won't make a difference either way!

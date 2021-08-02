@@ -1,4 +1,4 @@
-:song: funkininst
+:bg:plainblacklol
 :megaballistic:
 :megaballistic: You made the song about food?!
 :feverpointtwo: I did it to throw you off, and it worked!
@@ -18,6 +18,7 @@
 :feverconfuse: This is the second time we've ran into some crazy religious nut.
 :teaworry: Wait, what are you doi-
 :feverpointtwo: Hey, don't do anything stu-
+:hidebg:
 :bg:white flashy shit
 :sfx:heavenlychoir
 :shake

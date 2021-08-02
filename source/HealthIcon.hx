@@ -17,6 +17,8 @@ class HealthIcon extends FlxSprite
 
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
+		animation.add('bf-casual', [0, 1], 0, false, isPlayer);
+		animation.add('bf-casualdemon', [0, 1], 0, false, isPlayer);
 		animation.add('bf-8bit', [0, 1], 0, false, isPlayer);
 		animation.add('bfdemoncesar', [2, 3], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);

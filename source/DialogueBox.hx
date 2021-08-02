@@ -68,9 +68,6 @@ class DialogueBox extends FlxSpriteGroup
 			case 'ur-girl':
 				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'funkin-god':
-				FlxG.sound.playMusic(Paths.music('LunchboxScary'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
 		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFFB3DFd8);
@@ -462,12 +459,6 @@ class DialogueBox extends FlxSpriteGroup
 		// HARD CODING CUZ IM STUPDI
 		if (PlayState.SONG.song.toLowerCase() == 'chicken-sandwich')
 			portraitLeft.visible = false;
-		if (PlayState.SONG.song.toLowerCase() == 'funkin-god')
-		{
-			portraitLeft.color = FlxColor.BLACK;
-			swagDialogue.color = FlxColor.WHITE;
-			dropText.color = FlxColor.BLACK;
-		}
 
 		dropText.text = swagDialogue.text;
 

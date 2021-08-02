@@ -148,10 +148,6 @@ class MainMenuState extends MusicBeatState
 		{
 			FlxG.switchState(new CreditsState());
 		}
-		if (FlxG.keys.justPressed.K)
-		{
-			FlxG.switchState(new CreditsState());
-		}
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;

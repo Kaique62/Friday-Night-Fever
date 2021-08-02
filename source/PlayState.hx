@@ -1164,7 +1164,7 @@ class PlayState extends MusicBeatState
 		// cameras = [FlxG.cameras.list[1]];
 		startingSong = true;
 		
-		if (isStoryMode || curSong.toLowerCase() == 'void' || curSong.toLowerCase() == 'down-bad' || curSong.toLowerCase() == 'bazinga' || curSong.toLowerCase() == 'party-crasher' || curSong.toLowerCase() == 'crucify' || curSong.toLowerCase() == 'chicken-sandwich' || curSong.toLowerCase() == 'funkin-god')
+		if (isStoryMode)
 		{
 			switch (curSong.toLowerCase())
 			{
@@ -1197,12 +1197,12 @@ class PlayState extends MusicBeatState
 						});
 					});
 				case 'ur-girl':
-					schoolIntro(doof);
+					NOTSenpai(doof);
 				case 'chicken-sandwich':
 					FlxG.sound.play(Paths.sound('ANGRY'));
-					schoolIntro(doof);
+					NOTSenpai(doof);
 				case 'funkin-god':
-					schoolIntro(doof);
+					NOTSenpai(doof);
 				case 'makomelon':
 					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					NOTSenpai(doof);

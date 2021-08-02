@@ -1,5 +1,7 @@
 bf
 bfdemoncesar
+bf-casual
+bf-casualdemon
 dad
 gf
 spooky

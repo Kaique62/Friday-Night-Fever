@@ -77,10 +77,6 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);
 
-		menuImage = new FlxSprite(0, 0).loadGraphic(Paths.image(menuMap.get('story mode')[0]));
-		menuImage.antialiasing = true;
-		add(menuImage);
-
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
@@ -94,7 +90,10 @@ class MainMenuState extends MusicBeatState
 		magenta.antialiasing = true;
 		magenta.color = 0xFFfd719b;
 		add(magenta);
-		// magenta.scrollFactor.set();
+
+		menuImage = new FlxSprite(0, 0).loadGraphic(Paths.image(menuMap.get('story mode')[0]));
+		menuImage.antialiasing = true;
+		add(menuImage);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -114,8 +113,6 @@ class MainMenuState extends MusicBeatState
 
 		firstStart = false;
 
-		//FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
-
 		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? " FNF - " + kadeEngineVer + " Kade Engine" : ""), 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -125,10 +122,6 @@ class MainMenuState extends MusicBeatState
             versionShit.text += '\nPress C to visit the credits menu';
             versionShit.y -= 18;
         }
-		
-
-		// NG.core.calls.event.logEvent('swag').send();
-
 
 		if (FlxG.save.data.dfjk)
 			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
@@ -148,6 +141,7 @@ class MainMenuState extends MusicBeatState
 		{
 			FlxG.switchState(new CreditsState());
 		}
+
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;

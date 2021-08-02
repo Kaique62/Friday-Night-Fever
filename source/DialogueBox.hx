@@ -363,11 +363,10 @@ class DialogueBox extends FlxSpriteGroup
 
 		main = new FlxSprite(419, 656);
 		main.frames = Paths.getSparrowAtlas('dialogue/DiaButtons');
-		main.animation.addByPrefix('idle', 'mainMenu', 24, false);
-		main.animation.addByPrefix('over', 'MainGlow', 24, false);
+		main.animation.addByPrefix('idle', 'mainMenu', 0, false);
+		main.animation.addByPrefix('over', 'MainGlow', 0, false);
 		main.animation.play('idle');
-		main.updateHitbox();
-		main.active = true;
+		main.antialiasing = true;
 		add(main);
 
 		end = new FlxSprite(679, 660);
@@ -375,8 +374,7 @@ class DialogueBox extends FlxSpriteGroup
 		end.animation.addByPrefix('normal', 'Skip', 0, false);
 		end.animation.addByPrefix('glow', 'SkipGlow', 0, false);
 		end.animation.play('normal');
-		end.updateHitbox();
-		end.active = true;
+		end.antialiasing = true;
 		add(end);
 
 		portraitMap = [
@@ -418,42 +416,23 @@ class DialogueBox extends FlxSpriteGroup
 			FlxG.camera.shake(0.09);
 			PlayState.instance.camHUD.shake();(0.09);
 		}
-		//was stupid and put it above -iso
-		if(FlxG.mouse.overlaps(main))
+
+		main.animation.play(FlxG.mouse.overlaps(main) ? 'over' : 'idle');
+		end.animation.play(FlxG.mouse.overlaps(end) ? 'glow' : 'normal');
+
+		if(FlxG.mouse.justPressed)
 		{
-			main.animation.play('over');
-			main.updateHitbox();
-			
-			if(FlxG.mouse.justPressed)
+			if(FlxG.mouse.overlaps(main))
 			{
 				FlxG.sound.music.stop();
 				FlxG.switchState(new MainMenuState());
 			}
-		}
-		else
-		{
-			main.animation.play('idle');
-			main.updateHitbox();
-		}
-
-
-		//ends the dialogue lol
-		if(FlxG.mouse.overlaps(end))
-		{
-			end.animation.play('glow');
-			end.updateHitbox();
-
-			if(FlxG.mouse.justPressed)
+			else if(FlxG.mouse.overlaps(end))
 			{
 				FlxG.sound.music.stop();
 				finishThing();
 				kill();
 			}
-		}
-		else
-		{
-			end.animation.play('normal');
-			end.updateHitbox();
 		}
 
 		// HARD CODING CUZ IM STUPDI
@@ -620,7 +599,7 @@ class DialogueBox extends FlxSpriteGroup
 							}});
 						}
 					}
-					else if(curCharacter.startsWith('mako'))
+					else if(curCharacter.startsWith('mako') && !curCharacter.endsWith('corrupt'))
 					{
 						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Mako-Beep'), 0.6)];
 						hidePortraits('mako');
@@ -713,11 +692,10 @@ class DialogueBox extends FlxSpriteGroup
 						mega.flipX = true;
 						mega.animation.play(curCharacter);
 					}
-					else if(curCharacter == 'mako')
+					else if(curCharacter == 'makocorrupt')
 					{
 						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Mako-Beep'), 0.6)];
 						hidePortraits('makocorrupt');
-						var fixAnim:String = StringTools.replace(curCharacter, 'mako', '');
 						makocorrupt.animation.play('makocorrupt');
 					}
 					else if(curCharacter.startsWith('hunni'))

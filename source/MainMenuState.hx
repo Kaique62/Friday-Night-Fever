@@ -33,8 +33,6 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = ['story mode', 'freeplay'];
 	#end
 
-	var newGaming:FlxText;
-	var newGaming2:FlxText;
 	public static var firstStart:Bool = true;
 
 	public static var nightly:String = "";
@@ -47,11 +45,11 @@ class MainMenuState extends MusicBeatState
 	public static var finishedFunnyMove:Bool = false;
 	var menuImage:FlxSprite;
 	var menuMap:Map<String, Array<Dynamic>> = [
-	'story mode' => ['fever', -50, -40],
-	'freeplay' => ['teaa', -20, -226],
-	'jukebox' => ['jukebox', 40, 62],
-	'gallery' => ['monaLisaCesar', 82, 16],
-	'options' => ['cogwheel', 58, 126]
+	'story mode' => ['fever', -50, -40, true],
+	'freeplay' => ['teaa', -20, -226, true],
+	'jukebox' => ['jukebox', 40, 62, false],
+	'gallery' => ['monaLisaCesar', 82, 16, false],
+	'options' => ['cogwheel', 58, 126, false]
 ];
 
 	override function create()
@@ -106,14 +104,21 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " select", 0);
 			menuItem.animation.play('idle');
 			menuItem.updateHitbox();
-			menuItem.x = FlxG.width - menuItem.width + 1;
+			menuItem.x = FlxG.width - menuItem.width + 5;
 			menuItem.ID = i;
 			menuItems.add(menuItem);
+			
+			selectedSomethin = true;
+			menuItem.x += 550;
+			FlxTween.tween(menuItem, {x: FlxG.width - menuItem.width + 5}, 0.65 + (0.12 * i), {ease:FlxEase.smoothStepInOut, onComplete:function(twn:FlxTween){
+				if(menuItem.ID == optionShit.length - 1)
+					selectedSomethin = false;
+			}});
 		}
 
 		firstStart = false;
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? " FNF - " + kadeEngineVer + " Kade Engine" : ""), 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, 'Using Kade Engine $kadeEngineVer', 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -168,49 +173,38 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-				if (optionShit[curSelected] == 'donate')
-				{
-					FlxG.switchState(new JukeboxState());
-				}
-				else
-				{
-					selectedSomethin = true;
-					FlxG.sound.play(Paths.sound('confirmMenu'));
-					
-					if (FlxG.save.data.flashing)
-						FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+				selectedSomethin = true;
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+				
+				if (FlxG.save.data.flashing)
+					FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
-					menuItems.forEach(function(spr:FlxSprite)
+				menuItems.forEach(function(spr:FlxSprite)
+				{
+					if (curSelected != spr.ID)
 					{
-						if (curSelected != spr.ID)
+						FlxTween.tween(spr, {x:FlxG.width + spr.width}, 0.44, {ease:FlxEase.smoothStepInOut, onComplete:function(twn:FlxTween){
+							spr.kill();
+						}});
+					}
+					else
+					{
+						if (FlxG.save.data.flashing)
 						{
-							FlxTween.tween(spr, {alpha: 0}, 1.3, {
-								ease: FlxEase.quadOut,
-								onComplete: function(twn:FlxTween)
-								{
-									spr.kill();
-								}
+							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
+							{
+								goToState();
 							});
 						}
 						else
 						{
-							if (FlxG.save.data.flashing)
+							new FlxTimer().start(1, function(tmr:FlxTimer)
 							{
-								FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
-								{
-									goToState();
-								});
-							}
-							else
-							{
-								new FlxTimer().start(1, function(tmr:FlxTimer)
-								{
-									goToState();
-								});
-							}
+								goToState();
+							});
 						}
-					});
-				}
+					}
+				});
 			}
 		}
 
@@ -260,10 +254,23 @@ class MainMenuState extends MusicBeatState
 			}
 
 			spr.updateHitbox();
-			spr.x = FlxG.width - spr.width + 5;
+			if(!selectedSomethin)
+				spr.x = FlxG.width - spr.width + 5;
 		});
+		
+		FlxTween.cancelTweensOf(menuImage);
+		if(menuMap.get(optionShit[curSelected])[3])
+		{
+			menuImage.y = FlxG.height;
+			FlxTween.tween(menuImage, {y:menuMap.get(optionShit[curSelected])[2]}, 0.36, {ease:FlxEase.smoothStepInOut});
+		}
+		else
+		{
+			menuImage.y = menuMap.get(optionShit[curSelected])[2];
+		}
+		
 		menuImage.loadGraphic(Paths.image(menuMap.get(optionShit[curSelected])[0]));
 		menuImage.updateHitbox();
-		menuImage.setPosition(menuMap.get(optionShit[curSelected])[1], menuMap.get(optionShit[curSelected])[2]);
+		menuImage.x = menuMap.get(optionShit[curSelected])[1];
 	}
 }

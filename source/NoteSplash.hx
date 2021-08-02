@@ -13,7 +13,6 @@ class NoteSplash extends FlxSprite
         antialiasing = true;
         alpha = 0.69;
 
-
         updateHitbox();
         if(direction == 0 || direction == 3)
             offset.set(0.291 * this.width, 0.315 * this.height);

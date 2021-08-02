@@ -330,6 +330,9 @@ class TitleState extends MusicBeatState
 
 		FlxG.log.add(curBeat);
 
+		if(curBeat > 7)
+			ngSpr.visible = false;
+		
 		switch (curBeat)
 		{
 			case 1:
@@ -345,7 +348,6 @@ class TitleState extends MusicBeatState
 				ngSpr.visible = true;
 			case 7:
 				deleteCoolText();
-				ngSpr.visible = false;
 			case 8:
 				createCoolText([curWacky[0]]);
 			case 10:

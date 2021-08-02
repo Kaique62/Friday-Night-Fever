@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="senpai.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Angry Senpai DOWN NOTE instance0000" x="0" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai DOWN NOTE instance0001" x="100" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0000" x="200" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0001" x="300" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0002" x="400" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0003" x="500" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0004" x="600" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0005" x="700" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0006" x="800" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0007" x="900" y="0" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0008" x="0" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0009" x="100" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0010" x="200" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0011" x="300" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0012" x="400" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0013" x="500" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0014" x="600" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai Idle instance0015" x="700" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai LEFT NOTE instance0000" x="800" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai LEFT NOTE instance0001" x="900" y="140" width="100" height="140"/>
+	<SubTexture name="Angry Senpai RIGHT NOTE instance0000" x="0" y="280" width="100" height="140"/>
+	<SubTexture name="Angry Senpai RIGHT NOTE instance0001" x="100" y="280" width="100" height="140"/>
+	<SubTexture name="Angry Senpai UP NOTE instance0000" x="200" y="280" width="100" height="140"/>
+	<SubTexture name="Angry Senpai UP NOTE instance0001" x="300" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI DOWN NOTE instance0000" x="400" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI DOWN NOTE instance0001" x="500" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI LEFT NOTE instance0000" x="600" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI LEFT NOTE instance0001" x="700" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI RIGHT NOTE instance0000" x="800" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI RIGHT NOTE instance0001" x="900" y="280" width="100" height="140"/>
+	<SubTexture name="SENPAI UP NOTE instance0000" x="0" y="420" width="100" height="140"/>
+	<SubTexture name="SENPAI UP NOTE instance0001" x="100" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0000" x="200" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0001" x="300" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0002" x="400" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0003" x="500" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0004" x="600" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0005" x="700" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0006" x="800" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0007" x="900" y="420" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0008" x="0" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0009" x="100" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0010" x="200" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0011" x="300" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0012" x="400" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0013" x="500" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0014" x="600" y="560" width="100" height="140"/>
+	<SubTexture name="Senpai Idle instance0015" x="700" y="560" width="100" height="140"/>
+</TextureAtlas>

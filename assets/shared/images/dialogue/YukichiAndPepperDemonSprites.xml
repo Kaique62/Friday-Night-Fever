@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="YukichiAndPepperDemonSprites.png">
+<SubTexture name="yukichiSmile0000" x="0" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="yukichiNormal0000" x="424" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="PepperDemonSmile0000" x="848" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="PepperDemonSad0000" x="1272" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+</TextureAtlas>

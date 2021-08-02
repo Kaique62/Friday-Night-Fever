@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="halloween bg.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="halloweem bg0000" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0000" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0001" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0002" x="5120" y="0" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0003" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0004" x="2560" y="1400" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0005" x="5120" y="1400" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0006" x="0" y="2800" width="2560" height="1400"/>
+	<SubTexture name="halloweem bg lightning strike0007" x="2560" y="2800" width="2560" height="1400"/>
+</TextureAtlas>

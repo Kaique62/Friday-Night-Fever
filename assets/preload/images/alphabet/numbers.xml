@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="numbers.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="00000" x="0" y="0" width="35" height="54"/>
+	<SubTexture name="00001" x="0" y="0" width="35" height="54"/>
+	<SubTexture name="00002" x="50" y="0" width="35" height="54"/>
+	<SubTexture name="00003" x="50" y="0" width="35" height="54"/>
+	<SubTexture name="10000" x="100" y="0" width="23" height="53"/>
+	<SubTexture name="10001" x="100" y="0" width="23" height="53"/>
+	<SubTexture name="10002" x="138" y="0" width="23" height="53"/>
+	<SubTexture name="10003" x="138" y="0" width="23" height="53"/>
+	<SubTexture name="20000" x="176" y="0" width="37" height="52"/>
+	<SubTexture name="20001" x="176" y="0" width="37" height="52"/>
+	<SubTexture name="20002" x="228" y="0" width="37" height="52"/>
+	<SubTexture name="20003" x="228" y="0" width="37" height="52"/>
+	<SubTexture name="30000" x="280" y="0" width="34" height="56"/>
+	<SubTexture name="30001" x="280" y="0" width="34" height="56"/>
+	<SubTexture name="30002" x="329" y="0" width="34" height="56"/>
+	<SubTexture name="30003" x="329" y="0" width="34" height="56"/>
+	<SubTexture name="40000" x="378" y="0" width="35" height="55"/>
+	<SubTexture name="40001" x="378" y="0" width="35" height="55"/>
+	<SubTexture name="40002" x="428" y="0" width="35" height="55"/>
+	<SubTexture name="40003" x="428" y="0" width="35" height="55"/>
+	<SubTexture name="50000" x="0" y="71" width="41" height="53"/>
+	<SubTexture name="50001" x="0" y="71" width="41" height="53"/>
+	<SubTexture name="50002" x="56" y="71" width="41" height="53"/>
+	<SubTexture name="50003" x="56" y="71" width="41" height="53"/>
+	<SubTexture name="60000" x="112" y="71" width="39" height="54"/>
+	<SubTexture name="60001" x="112" y="71" width="39" height="54"/>
+	<SubTexture name="60002" x="166" y="71" width="39" height="54"/>
+	<SubTexture name="60003" x="166" y="71" width="39" height="54"/>
+	<SubTexture name="70000" x="220" y="71" width="40" height="49"/>
+	<SubTexture name="70001" x="220" y="71" width="40" height="49"/>
+	<SubTexture name="70002" x="275" y="71" width="40" height="49"/>
+	<SubTexture name="70003" x="275" y="71" width="40" height="49"/>
+	<SubTexture name="80000" x="330" y="71" width="34" height="56"/>
+	<SubTexture name="80001" x="330" y="71" width="34" height="56"/>
+	<SubTexture name="80002" x="379" y="71" width="34" height="56"/>
+	<SubTexture name="80003" x="379" y="71" width="34" height="56"/>
+	<SubTexture name="90000" x="428" y="71" width="34" height="57"/>
+	<SubTexture name="90001" x="428" y="71" width="34" height="57"/>
+	<SubTexture name="90002" x="477" y="71" width="34" height="57"/>
+	<SubTexture name="90003" x="477" y="71" width="34" height="57"/>
+</TextureAtlas>

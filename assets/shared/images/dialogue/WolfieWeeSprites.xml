@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="WolfieWeeSprites.png">
+<SubTexture name="weeNormal0000" x="0" y="0" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+<SubTexture name="weeSmug0000" x="424" y="0" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+<SubTexture name="weeWhat0000" x="848" y="0" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+<SubTexture name="WolfieHuh0000" x="1272" y="0" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+<SubTexture name="WolfieSmile0000" x="0" y="707" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+<SubTexture name="WolfieandWee0000" x="424" y="707" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+</TextureAtlas>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="vs FeverTown.png">
+<SubTexture name="Vs FeverTown0000" x="0" y="0" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0001" x="1046" y="0" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0002" x="2092" y="0" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0003" x="3138" y="0" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0004" x="0" y="284" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0005" x="1046" y="284" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0006" x="2092" y="284" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0007" x="3138" y="284" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0008" x="0" y="568" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0009" x="1046" y="568" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0010" x="2092" y="568" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0011" x="3138" y="568" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0012" x="0" y="852" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+<SubTexture name="Vs FeverTown0013" x="1046" y="852" width="1046" height="284" frameX="0" frameY="0" frameWidth="1046" frameHeight="284" />
+</TextureAtlas>

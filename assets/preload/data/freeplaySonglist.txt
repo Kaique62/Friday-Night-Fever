@@ -1,0 +1,20 @@
+Tutorial:gf:1
+Metamorphosis:dad:1
+Void:dad:1
+Down Bad:dad:1
+Thriller:spooky:2
+Legendary:spooky:2
+Bazinga:monster:2
+Crucify:monster:2
+Makomelon:pico:3
+Vip:pico:3
+Farmed:pico:3
+Honey:mom:4
+Bunnii:mom:4
+Throw It Back:mom:4
+Mild:monster-christmas:5
+Spice:monster-christmas:5
+Party Crasher:yukichi:5
+Ur Girl:senpai:6
+Chicken Sandwich:senpai:6
+Funkin God:spirit:6

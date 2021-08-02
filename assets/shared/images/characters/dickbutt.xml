@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dickbutt.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Pepper Down0000" x="0" y="0" width="513" height="538" frameX="0" frameY="-112" frameWidth="513" frameHeight="653"/>
+	<SubTexture name="Pepper Down0001" x="0" y="0" width="513" height="538" frameX="0" frameY="-112" frameWidth="513" frameHeight="653"/>
+	<SubTexture name="Pepper Down0002" x="513" y="0" width="467" height="653" frameX="-39" frameY="0" frameWidth="513" frameHeight="653"/>
+	<SubTexture name="Pepper Down0003" x="513" y="0" width="467" height="653" frameX="-39" frameY="0" frameWidth="513" frameHeight="653"/>
+	<SubTexture name="Pepper Down0004" x="513" y="0" width="467" height="653" frameX="-39" frameY="0" frameWidth="513" frameHeight="653"/>
+	<SubTexture name="Pepper Down0005" x="513" y="0" width="467" height="653" frameX="-39" frameY="0" frameWidth="513" frameHeight="653"/>
+	<SubTexture name="Pepper Idle0000" x="980" y="0" width="445" height="694" frameX="-30" frameY="-162" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0001" x="980" y="0" width="445" height="694" frameX="-30" frameY="-162" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0002" x="1425" y="0" width="451" height="739" frameX="-16" frameY="-117" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0003" x="1876" y="0" width="435" height="857" frameX="-10" frameY="0" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0004" x="2311" y="0" width="451" height="809" frameX="-4" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0005" x="2762" y="0" width="451" height="809" frameX="-4" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0006" x="3213" y="0" width="453" height="809" frameX="-2" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0007" x="0" y="857" width="455" height="809" frameX="0" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0008" x="0" y="857" width="455" height="809" frameX="0" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0009" x="455" y="857" width="451" height="809" frameX="-4" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0010" x="455" y="857" width="451" height="809" frameX="-4" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0011" x="906" y="857" width="451" height="809" frameX="-4" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Idle0012" x="906" y="857" width="451" height="809" frameX="-4" frameY="-48" frameWidth="475" frameHeight="857"/>
+	<SubTexture name="Pepper Left0000" x="1357" y="857" width="617" height="696" frameX="0" frameY="0" frameWidth="629" frameHeight="699"/>
+	<SubTexture name="Pepper Left0001" x="1357" y="857" width="617" height="696" frameX="0" frameY="0" frameWidth="629" frameHeight="699"/>
+	<SubTexture name="Pepper Left0002" x="1974" y="857" width="547" height="690" frameX="-82" frameY="-9" frameWidth="629" frameHeight="699"/>
+	<SubTexture name="Pepper Left0003" x="1974" y="857" width="547" height="690" frameX="-82" frameY="-9" frameWidth="629" frameHeight="699"/>
+	<SubTexture name="Pepper Left0004" x="1974" y="857" width="547" height="690" frameX="-82" frameY="-9" frameWidth="629" frameHeight="699"/>
+	<SubTexture name="Pepper Left0005" x="1974" y="857" width="547" height="690" frameX="-82" frameY="-9" frameWidth="629" frameHeight="699"/>
+	<SubTexture name="Pepper Right0000" x="2521" y="857" width="596" height="854" frameX="-7" frameY="-19" frameWidth="603" frameHeight="873"/>
+	<SubTexture name="Pepper Right0001" x="2521" y="857" width="596" height="854" frameX="-7" frameY="-19" frameWidth="603" frameHeight="873"/>
+	<SubTexture name="Pepper Right0002" x="3117" y="857" width="554" height="872" frameX="0" frameY="0" frameWidth="603" frameHeight="873"/>
+	<SubTexture name="Pepper Right0003" x="3117" y="857" width="554" height="872" frameX="0" frameY="0" frameWidth="603" frameHeight="873"/>
+	<SubTexture name="Pepper Right0004" x="3117" y="857" width="554" height="872" frameX="0" frameY="0" frameWidth="603" frameHeight="873"/>
+	<SubTexture name="Pepper Right0005" x="3117" y="857" width="554" height="872" frameX="0" frameY="0" frameWidth="603" frameHeight="873"/>
+	<SubTexture name="Pepper Up0000" x="0" y="1729" width="455" height="882" frameX="-5" frameY="0" frameWidth="470" frameHeight="883"/>
+	<SubTexture name="Pepper Up0001" x="0" y="1729" width="455" height="882" frameX="-5" frameY="0" frameWidth="470" frameHeight="883"/>
+	<SubTexture name="Pepper Up0002" x="455" y="1729" width="470" height="850" frameX="0" frameY="-33" frameWidth="470" frameHeight="883"/>
+	<SubTexture name="Pepper Up0003" x="455" y="1729" width="470" height="850" frameX="0" frameY="-33" frameWidth="470" frameHeight="883"/>
+	<SubTexture name="Pepper Up0004" x="455" y="1729" width="470" height="850" frameX="0" frameY="-33" frameWidth="470" frameHeight="883"/>
+	<SubTexture name="Pepper Up0005" x="455" y="1729" width="470" height="850" frameX="0" frameY="-33" frameWidth="470" frameHeight="883"/>
+</TextureAtlas>

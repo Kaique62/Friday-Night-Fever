@@ -1,0 +1,43 @@
+:bg:plainblacklol
+:song:heartbeat
+:prisoner: I’ve been in this ridiculous outfit for over a month.
+:prisoner: I can hardly understand a lick of what you guys are saying.
+:prisoner: And everytime I think about escaping, the chains around my wrists send a very painful electric shock.
+:prisoner: So, I’m going to ask you one more time.
+:prisoner: Stop talking to me, or I’m going to try killing myself again.
+:NPC: Bahaha!
+:NPC: That’s a good one, prisoner!
+:NPC: You of all people should already know that doing that will send you straight to sleep.
+:NPC: Those handcuffs of yours are ready to administer a very strong sedative if you so much as think about it!
+:NPC: We wouldn’t want you to get hurt. That’ll look bad on the news!
+:NPC: Speaking of the news, tomorrow’s your trial. And I gotta say, it’ll be interesting!
+:NPC: We’ve never had a trial where we don’t know the NAME of the defendant! Honestly, I thought we’d torture that out of you quickly.
+:NPC: You demons are a nasty folk, aren’t you?
+:prisoner: ...
+:NPC: I hurt your feelings didn’t I? Don’t worry, they’ll hurt you a lot more.
+:narrator: . . .
+:narrator: . . .
+:narrator: Yo.
+:narrator: YO.
+:fuckoff:
+:hidebg:
+:bg:room
+:song:milkteaINST
+:teasmile: Hey, wake up.
+:feverscaredjump: Huh? What?-
+:teasmile: You were having a nightmare. Something like that, at least.
+:feverconfuse: Oh.
+:feverconfuse: Thanks for waking me up.
+:feverconfuse: Where was I?
+:teasmile: We were heading to bed?
+:feverconfuse: No no, I should finish this work.
+:teaannoy: So you can drool on those papers some more?
+:feverworry: Uh, no…
+:teasmile: Ugh.
+:teasmile: There’s no need to rush things, you know.
+:fevertired: Yeah, yeah, I know. I wish I could sleep without jolting awake a few minutes in.
+:teathink: I still wish you’d tell me more.
+:fevertired: I will, soon. Sorry, it’s just annoying.
+:teaneutral: Well, I can think of a way we can help you relax.
+:fuckoff:
+:feversilly: Oh yeah? Sure.

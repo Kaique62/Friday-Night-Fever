@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="crowd.png">
+	<!-- Created with Adobe Animate version 20.0.1.19255 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CROWD30000" x="0" y="0" width="2928" height="1812" frameX="0" frameY="0" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30001" x="2928" y="0" width="2928" height="1745" frameX="0" frameY="-68" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30002" x="0" y="1812" width="2928" height="1745" frameX="0" frameY="-68" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30003" x="2928" y="1812" width="2928" height="1759" frameX="0" frameY="-53" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30004" x="0" y="3571" width="2928" height="1759" frameX="0" frameY="-53" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30005" x="2928" y="3571" width="2928" height="1774" frameX="0" frameY="-39" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30006" x="0" y="5345" width="2928" height="1774" frameX="0" frameY="-39" frameWidth="2928" frameHeight="1813"/>
+	<SubTexture name="CROWD30007" x="2928" y="5345" width="2928" height="1812" frameX="0" frameY="0" frameWidth="2928" frameHeight="1813"/>
+</TextureAtlas>

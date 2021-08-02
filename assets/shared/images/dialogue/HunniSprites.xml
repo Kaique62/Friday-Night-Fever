@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="HunniSprites.png">
+<SubTexture name="HunniMad0000" x="0" y="0" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+<SubTexture name="HunniSmile0000" x="424" y="0" width="424" height="707" frameX="0" frameY="0" frameWidth="424" frameHeight="707" />
+</TextureAtlas>

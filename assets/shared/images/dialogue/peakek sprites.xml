@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="peakek sprites.png">
+<SubTexture name="peaHappy0000" x="0" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="kekOtherSmile0000" x="424" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="peaClown0000" x="848" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="peaFever0000" x="1272" y="0" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="peaCorrupt0000" x="0" y="544" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="kekSUS0000" x="424" y="544" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="peaEW0000" x="848" y="544" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="kekHappy0000" x="1272" y="544" width="424" height="544" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+</TextureAtlas>

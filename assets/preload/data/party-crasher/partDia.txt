@@ -1,0 +1,38 @@
+:song: partinst
+:bg:week5
+:teaworry: Is everyone alright?
+:feverworry: Goddammit... It's always the third song, is this some sort of curse?
+:pepperdemonsad: Huh, so it happens to you guys too.
+:teaworry: Hey, I think I recognize those colors on that spaceship!
+:feverworry: Oh.
+:feverworry: Fucking goddamnit.
+:song:notfound
+:yukichismile: Alright everyone!
+:yukichismile: Which of you are evading your taxes?
+:teaworry: What?
+:yukichinormal: What?
+:fevertired: Fucking goddamnit. Fucking hell. They're looking for me.
+:teaworry: Babe, what are you on about? Who is that?
+:yukichismile: The names Yukichi! And I'm here for the space criminal behind you!
+:teaworry: Space criminal? What are you-
+:teaworry:
+:teaannoy: Hold on, what.
+:fevertired: Ugh.
+:fevertired: Guess I can't hide anymore.
+:teatwo: Hide?
+:yukichinormal: You're Fever, aren't you? You may have the others fooled, but not me.
+:yukichismile: You use another form to hide and have others think you're human.
+:yukichismile: But in reality, you're just another criminal scumbag avoiding jailtime!
+:teaangry: And when the FUCK were you going to tell me this?
+:defrown: I wasn't planning on going back to space for a while...
+:demonwtf: But it seems that I can't get away from you guys for even a short while. Fucking annoying.
+:yukichismile: Enough! Fever, you're wanted on account of several crimes, and I'm taking you back in!
+:defrown: There's no way I'm going back.
+:hidebg:
+:bg: prison
+:defrown: You're not even aware of what they do to people, are you?
+:yukichinormal: That's none of my business. You probably deserve it, anyways.
+:demonwtftwo: Fucking. Fuck. Fuck you. FUCK.
+:teaannoy: We're not dropping this.
+:fuckoff:
+:defrown: Yeah yeah, let's just do this first.

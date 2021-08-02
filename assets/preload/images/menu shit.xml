@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu shit.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="freeplay0000" x="0" y="0" width="483" height="116"/>
+	<SubTexture name="freeplay select0000" x="483" y="0" width="519" height="116"/>
+	<SubTexture name="gallery0000" x="0" y="116" width="483" height="116"/>
+	<SubTexture name="gallery select0000" x="483" y="116" width="519" height="116"/>
+	<SubTexture name="jukebox0000" x="0" y="232" width="483" height="116"/>
+	<SubTexture name="jukebox select0000" x="483" y="232" width="519" height="116"/>
+	<SubTexture name="options0000" x="0" y="348" width="483" height="116"/>
+	<SubTexture name="options select0000" x="483" y="348" width="519" height="116"/>
+	<SubTexture name="story mode0000" x="0" y="464" width="517" height="119"/>
+	<SubTexture name="story mode select0000" x="0" y="583" width="584" height="119"/>
+</TextureAtlas>

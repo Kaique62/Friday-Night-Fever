@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="MegaSprites.png">
+<SubTexture name="megaSmile0000" x="0" y="0" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaFlex0000" x="424" y="0" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaMISSED0000" x="848" y="0" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaBug0000" x="1272" y="0" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaSurprised0000" x="0" y="459" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaConfused0000" x="424" y="459" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaGoingBALLISTIC0000" x="848" y="459" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaHug0000" x="1272" y="459" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaBlushCrazy0000" x="0" y="918" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+<SubTexture name="megaINSANEEEE0000" x="424" y="918" width="424" height="459" frameX="0" frameY="0" frameWidth="424" frameHeight="459" />
+</TextureAtlas>

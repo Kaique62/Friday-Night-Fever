@@ -161,6 +161,7 @@ class GalleryState extends MusicBeatState
         image.loadGraphic(Paths.image(images[curSelected].path));
         image.scale.x = 1;
         image.scale.y = 1;
+        
         while(image.width > 450)
         {
             image.scale.x -= 0.05;

@@ -317,49 +317,11 @@ class PlayState extends MusicBeatState
 
 		trace('INFORMATION ABOUT WHAT U PLAYIN WIT:\nFRAMES: ' + Conductor.safeFrames + '\nZONE: ' + Conductor.safeZoneOffset + '\nTS: ' + Conductor.timeScale + '\nBotPlay : ' + FlxG.save.data.botplay);
 	
-		//dialogue shit
-		switch (SONG.song.toLowerCase())
+		//dialogue shit, it does the dialogue = txt file shit for u 
+		var dialogueString:String = SONG.song.toLowerCase() + '/dia';
+		if(Assets.exists(Paths.txt(dialogueString)))
 		{
-			case 'ur-girl':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('ur-girl/dia'));
-			case 'chicken-sandwich':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('chicken-sandwich/dia'));
-			case 'funkin-god':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('funkin-god/dia'));
-			case 'makomelon':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('makomelon/makoDia'));
-			case 'tutorial':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('tutorial/tutDia'));
-			case 'party-crasher':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('party-crasher/partDia'));
-			case 'metamorphosis':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('metamorphosis/dia'));
-			case 'void':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('void/dia'));
-			case 'down-bad':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('down-bad/dia'));
-			case 'bazinga':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('bazinga/dia'));
-			case 'crucify':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('crucify/dia'));
-			case 'legendary':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('legendary/dia'));
-			case 'thriller':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('thriller/dia'));
-			case 'vip':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('vip/dia'));
-			case 'farmed':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('farmed/dia'));
-			case 'honey':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('honey/dia'));
-			case 'bunnii':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('bunnii/dia'));
-			case 'throw-it-back':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('throw-it-back/dia'));
-			case 'mild':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('mild/dia'));
-			case 'spice':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('spice/dia'));
+			dialogue = CoolUtil.coolTextFile(Paths.txt(dialogueString));
 		}
 
 		switch(SONG.stage)
@@ -1069,69 +1031,23 @@ class PlayState extends MusicBeatState
 							});
 						});
 					});
-				case 'ur-girl':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
 				case 'chicken-sandwich':
 					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					FlxG.sound.play(Paths.sound('ANGRY'));
 					NOTSenpai(doof);
-				case 'funkin-god':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'makomelon':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'vip':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'farmed':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'tutorial':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'party-crasher':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'metamorphosis':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'void':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'down-bad':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
 				case 'bazinga':
 					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
 					jumpscare(doof);
-				case 'crucify':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'thriller':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'legendary':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'honey':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'bunnii':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'throw-it-back':
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'mild':  
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
-				case 'spice': 
-					camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
-					NOTSenpai(doof);
 				default:
-					startCountdown();
+					if(dialogue.length > 0)
+					{
+						camFollow.setPosition(gf.getGraphicMidpoint().x, gf.getGraphicMidpoint().y);
+						NOTSenpai(doof);
+					}
+					else
+					{
+						startCountdown();
+					}
 			}
 		}
 		else
@@ -2568,157 +2484,45 @@ class PlayState extends MusicBeatState
 								altAnim = '-alt';
 						}
 	
-					var delay:Int = 0;
-					// Accessing the animation name directly to play it
-					switch (Math.abs(daNote.noteData))
-					{
-						case 2:
-							dad.playAnim('singUP' + altAnim, true);
-							if(storyDifficulty == 4)
-							{
-								health += 0.03;
-							}
-						if(dad.curCharacter == 'monster')
+						var delay:Int = 0;
+						// Accessing the animation name directly to play it
+						switch (Math.abs(daNote.noteData))
 						{
-							gf.playAnim('scared');
-							health -= 0.02;
+							case 2:
+								dad.playAnim('singUP' + altAnim, true);
+							case 3:
+								dad.playAnim('singRIGHT' + altAnim, true);
+							case 1:
+								dad.playAnim('singDOWN' + altAnim, true);
+							case 0:
+								dad.playAnim('singLEFT' + altAnim, true);
 						}
-						if(dad.curCharacter == 'spirit')
-						{
-							if(storyDifficulty == 2)
-							{
-								health -= 0.02;
-							}
-							
-							if(storyDifficulty == 1)
-							{
-								health -= 0.02;
-							}
 
-							if(storyDifficulty == 0)
+						if(storyDifficulty != 4)
+						{
+							switch(dad.curCharacter)
 							{
-								health -= 0.01;
+								case 'mom-car': 
+									health -= 0.01;
+								case 'mom-carnight':
+									health -= 0.02;
+								case 'spirit':
+									switch(storyDifficulty)
+									{
+										default:
+											health -= 0.02;
+										case 0 | 4: // easy and baby mode
+											health -= 0.01;
+									}
+								case 'monster':
+									health -= 0.02;
+									gf.playAnim('scared');
 							}
 						}
-						if(dad.curCharacter == 'mom-car')
+						else
 						{
-							health -= 0.01;
+							health += 0.03;
 						}
-						if(dad.curCharacter == 'mom-carnight')
-						{
-							health -= 0.02;
-						}
-						case 3:
-							dad.playAnim('singRIGHT' + altAnim, true);
-							if(storyDifficulty == 4)
-							{
-								health += 0.03;
-							}
-						if(dad.curCharacter == 'monster')
-						{
-							gf.playAnim('scared');
-							health -= 0.02;
-						}
-						if(dad.curCharacter == 'spirit')
-						{
-							if(storyDifficulty == 2)
-							{
-								health -= 0.02;
-							}
-							
-							if(storyDifficulty == 1)
-							{
-								health -= 0.02;
-							}
-
-							if(storyDifficulty == 0)
-							{
-								health -= 0.01;
-							}
-						}
-						if(dad.curCharacter == 'mom-car')
-						{
-							health -= 0.01;
-						}
-						if(dad.curCharacter == 'mom-carnight')
-						{
-							health -= 0.02;
-						}
-						case 1:
-							dad.playAnim('singDOWN' + altAnim, true);
-							if(storyDifficulty == 4)
-							{
-								health += 0.03;
-							}
-						if(dad.curCharacter == 'monster')
-						{
-							gf.playAnim('scared');
-							health -= 0.02;
-						}
-						if(dad.curCharacter == 'spirit')
-						{
-							if(storyDifficulty == 2)
-							{
-								health -= 0.02;
-							}
-							
-							if(storyDifficulty == 1)
-							{
-								health -= 0.02;
-							}
-
-							if(storyDifficulty == 0)
-							{
-								health -= 0.01;
-							}
-						}
-						if(dad.curCharacter == 'mom-car')
-						{
-							health -= 0.01;
-						}
-						if(dad.curCharacter == 'mom-carnight')
-						{
-							health -= 0.02;
-						}
-						case 0:
-							dad.playAnim('singLEFT' + altAnim, true);
-							if(storyDifficulty == 4)
-							{
-								health += 0.03;
-							}
-						if(dad.curCharacter == 'monster')
-						{
-							gf.playAnim('scared');
-							health -= 0.02;
-						}
-						if(dad.curCharacter == 'spirit')
-						{
-							if(storyDifficulty == 2)
-							{
-								health -= 0.02;
-							}
-							
-							if(storyDifficulty == 1)
-							{
-								health -= 0.02;
-							}
-
-							if(storyDifficulty == 0)
-							{
-								health -= 0.01;
-							}
-						}
-						if(dad.curCharacter == 'mom-car')
-						{
-							health -= 0.01;
-						}
-						if(dad.curCharacter == 'mom-carnight')
-						{
-							health -= 0.02;
-						}
-						
-					}
-
 						
 						if (FlxG.save.data.cpuStrums)
 						{
@@ -3520,33 +3324,12 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	/*function badNoteCheck()
-		{
-			// just double pasting this shit cuz fuk u
-			// REDO THIS SYSTEM!
-			var upP = controls.UP_P;
-			var rightP = controls.RIGHT_P;
-			var downP = controls.DOWN_P;
-			var leftP = controls.LEFT_P;
-	
-			if (leftP)
-				noteMiss(0);
-			if (upP)
-				noteMiss(2);
-			if (rightP)
-				noteMiss(3);
-			if (downP)
-				noteMiss(1);
-			updateAccuracy();
-		}
-	*/
 	function updateAccuracy() 
-		{
-			totalPlayed += 1;
-			accuracy = Math.max(0,totalNotesHit / totalPlayed * 100);
-			accuracyDefault = Math.max(0, totalNotesHitDefault / totalPlayed * 100);
-		}
-
+	{
+		totalPlayed += 1;
+		accuracy = Math.max(0,totalNotesHit / totalPlayed * 100);
+		accuracyDefault = Math.max(0, totalNotesHitDefault / totalPlayed * 100);
+	}
 
 	function getKeyPresses(note:Note):Int
 	{

@@ -7,7 +7,7 @@ class NoteSplash extends FlxSprite
     public function new(X:Float, Y:Float, direction:Int)
     {
         super(X,Y);
-        frames = Paths.getSparrowAtlas('notesplash');
+        frames = Paths.getSparrowAtlas('notesplash', 'shared');
         animation.addByPrefix('idle', 'notesplash', 36, false);
         scale.set(1.08, 1.08);
         antialiasing = true;

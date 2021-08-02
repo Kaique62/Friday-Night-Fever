@@ -139,9 +139,23 @@ class MainMenuState extends MusicBeatState
 	}
 
 	var selectedSomethin:Bool = false;
+	var elapsedTimer:Float = 0;
 
 	override function update(elapsed:Float)
 	{
+		elapsedTimer += elapsed;
+		if(elapsedTimer > 1.4)
+		{
+			elapsedTimer = 0;
+			if(optionShit[curSelected] == 'gallery')
+			{
+				var randomX:Float = FlxG.random.float(menuImage.x, menuImage.x + menuImage.width);
+				var randomY:Float = FlxG.random.float(menuImage.y, menuImage.y + menuImage.height);
+				var sparkle:NoteSplash = new NoteSplash(randomX, randomY, 2);
+				add(sparkle);
+			}
+		}
+
 		if (FlxG.keys.justPressed.C && FlxG.save.data.visitedCredits)
 		{
 			FlxG.switchState(new CreditsState());

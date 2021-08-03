@@ -53,12 +53,11 @@ class DialogueBox extends FlxSpriteGroup
 	var whyFEVER:FlxSprite;
 	var impy:FlxSprite;
 
-	var handSelect:FlxSprite;
+	//var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
 
 	var bg:FlxSprite;
-	var main:FlxSprite;
-	var end:FlxSprite;
+	var controls:FlxText;
 
 	public function new(talkingRight:Bool = true, ?dialogueList:Array<String>)
 	{
@@ -341,8 +340,8 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
-		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
-		add(handSelect);
+		//handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
+		//add(handSelect);
 
 		dropText = new FlxText(50, 500, Std.int(FlxG.width * 0.9), "", 46);
 		dropText.font = 'Plunge';
@@ -356,24 +355,11 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue.delay = 0.04;
 		add(swagDialogue);
 
-		main = new FlxSprite(419, 660);
-		main.frames = Paths.getSparrowAtlas('dialogue/DiaButtons');
-		main.animation.addByPrefix('idle', 'mainMenu', 0, false);
-		main.animation.addByPrefix('over', 'MainGlow', 0, false);
-		main.animation.play('idle');
-		main.updateHitbox();
-		main.antialiasing = true;
-		add(main);
-
-		end = new FlxSprite(679, 660);
-		end.frames = Paths.getSparrowAtlas('dialogue/DiaButtons');
-		end.animation.addByPrefix('normal', 'Skip', 0, false);
-		end.animation.addByPrefix('glow', 'SkipGlow', 0, false);
-		end.animation.play('normal');
-		end.updateHitbox();
-		end.scrollFactor.set();
-		end.antialiasing = true;
-		add(end);
+		controls = new FlxText(0, box.y + box.height - 10, 0, "Press ESC / S to Skip Dialogue | Press M to return to Main Menu");
+		controls.setFormat(Paths.font('vcr.ttf'), 22, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
+		add(controls);
+		controls.screenCenter(X);
+		controls.visible = false;
 
 		portraitMap = [
 			'portraitLeft' => portraitLeft,
@@ -415,22 +401,18 @@ class DialogueBox extends FlxSpriteGroup
 			PlayState.instance.camHUD.shake();(0.09);
 		}
 
-		main.animation.play(FlxG.mouse.overlaps(main) ? 'over' : 'idle');
-		end.animation.play(FlxG.mouse.overlaps(end) ? 'glow' : 'normal');
-
-		if(FlxG.mouse.justPressed)
+		if(FlxG.keys.justPressed.S || FlxG.keys.justPressed.ESCAPE)
 		{
-			if(FlxG.mouse.overlaps(main))
-			{
+			if(FlxG.sound.music != null)
 				FlxG.sound.music.stop();
-				FlxG.switchState(new MainMenuState());
-			}
-			else if(FlxG.mouse.overlaps(end))
-			{
-				FlxG.sound.music.stop();
-				finishThing();
-				kill();
-			}
+			finishThing();
+			kill();
+		}
+
+		if(FlxG.keys.justPressed.M)
+		{
+			FlxG.sound.music.stop();
+			FlxG.switchState(new MainMenuState());			
 		}
 
 		// HARD CODING CUZ IM STUPDI
@@ -452,6 +434,7 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			startDialogue();
 			dialogueStarted = true;
+			controls.visible = true;
 		}
 
 		if (FlxG.keys.justPressed.ANY  && dialogueStarted == true)
@@ -476,6 +459,7 @@ class DialogueBox extends FlxSpriteGroup
 						bgFade.alpha -= 1 / 5 * 0.7;
 						swagDialogue.alpha -= 1 / 5;
 						dropText.alpha = swagDialogue.alpha;
+						controls.visible = false;
 					}, 5);
 
 					new FlxTimer().start(1.2, function(tmr:FlxTimer)

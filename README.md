@@ -19,6 +19,8 @@ Your girlfriend is also from space, and you're hiding some dark secrets from her
 - Fixed funkin-god not having the correct game over animation
 - You no longer have to beat the tutorial for the credits to appear at the end of Week 6
 - Jukebox code reworked
+- Ending dialogue no longer plays in freeplay
+- Skip and Main Menu buttons have been turned into keys you press, instead of clickable buttons.
 
 ### v1.0
 - the mod came out lmao

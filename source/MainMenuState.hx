@@ -278,6 +278,7 @@ class MainMenuState extends MusicBeatState
 		if(huh != 0)
 		{
 			FlxTween.cancelTweensOf(menuImage);
+
 			if(menuMap.get(optionShit[curSelected])[3])
 			{
 				menuImage.y = FlxG.height;

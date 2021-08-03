@@ -1414,7 +1414,7 @@ class PlayState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 		}
 
-		if( ['down-bad', 'party-crasher', 'crucify', 'farmed', 'bunni', 'throw-it-back', 'spice'].contains(SONG.song.toLowerCase()) )
+		if(isStoryMode && ['down-bad', 'party-crasher', 'crucify', 'farmed', 'bunni', 'throw-it-back', 'spice'].contains(SONG.song.toLowerCase()) )
 		{
 		  FlxG.sound.music.onComplete = endingDialogue;
 		}else{

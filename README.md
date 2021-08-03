@@ -10,7 +10,6 @@ Your girlfriend is also from space, and you're hiding some dark secrets from her
 
 ### v1.0.1
 - Main menu now has new effects and transitions
-- Added casual sprites to week 6 dialogue
 - Fixed some week 4 dialogue expressions not working
 - Removed base game songs / characters from the files
 - Optimized gallery images to not freeze the game on certain images

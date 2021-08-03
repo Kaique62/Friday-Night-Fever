@@ -143,5 +143,13 @@ class CreditsState extends MusicBeatState
     
         description.text = credits[curSelected].desc;
         description.screenCenter(X);
+
+        if(FlxG.sound.music != null)
+        {
+            if(curSelected == credits.length - 1)
+                FlxG.sound.music.fadeOut(4.2, 0.013);
+            else
+                FlxG.sound.music.fadeOut(2.2, 0.7);
+        }
     }
 }

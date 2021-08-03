@@ -7,7 +7,16 @@ import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.FlxCamera;
 import flixel.math.FlxMath;
+#if windows
 import Discord.DiscordClient;
+#end
+
+typedef JukeboxSong = {
+    var name:String;
+    var ?song:String;
+    var cover:String;
+    var bpm:Float;
+}
 
 class JukeboxState extends MusicBeatState
 {
@@ -16,25 +25,25 @@ class JukeboxState extends MusicBeatState
     var songText:AlphabetQuick;
     var lengthText:AlphabetQuick;
     var songs:Array<JukeboxSong> = [
-        new JukeboxSong('Metamorphosis', 'metamorphosis', 'week1', 160),
-        new JukeboxSong('Void', 'void', 'week1', 140),
-        new JukeboxSong('Down Bad', 'down-bad', 'week1', 180),
-        new JukeboxSong('Thriller', 'thriller', 'week2', 150),
-        new JukeboxSong('Legendary', 'legendary', 'week2', 160),
-        new JukeboxSong('Bazinga', 'bazinga', 'week2taki', 190),
-        new JukeboxSong('Makomelon', 'makomelon', 'week3', 160),
-        new JukeboxSong('VIP', 'vipCurrent', 'week3', 170),
-        new JukeboxSong('Farmed', 'farmed', 'week3', 160),
-        new JukeboxSong('Honey', 'honey', 'week4', 130),
-        new JukeboxSong('Bunnii', 'bunni', 'week4', 165),
-        new JukeboxSong('Throw It Back', 'throwItback', 'week4', 160),
-        new JukeboxSong('Mild', 'mild', 'week5', 100),
-        new JukeboxSong('Spice', 'spice', 'week5', 150),
-        new JukeboxSong('Party Crasher', 'party', 'week5', 159),
-        new JukeboxSong('Ur Girl', 'girl', 'week6', 144),
-        new JukeboxSong('Chicken Sandwich', 'chicken', 'week6', 150),
-        new JukeboxSong('Funkin God', 'funkingod', 'flippy', 190),
-        new JukeboxSong('BETA VIP', 'VIP', 'extras', 155),
+        {name:"Metamorphosis", cover:"week1", bpm:160},
+        {name:"Void", cover:"week1", bpm:140},
+        {name:"Down Bad", song:"down-bad", cover:"week1", bpm:180},
+        {name:"Thriller", cover:"week2", bpm:150},
+        {name:"Legendary", cover:"week2", bpm:160},
+        {name:"Bazinga", cover:"week2taki", bpm:190},
+        {name:"Makomelon", cover:"week3", bpm:160},
+        {name:"VIP", song:"vipCurrent", cover:"week3", bpm:170},
+        {name:"Farmed", cover:"week3", bpm:160},
+        {name:"Honey", cover:"week4", bpm:130},
+        {name:"Bunnii", song:'bunni', cover:"week4", bpm:165},
+        {name:"Throw It Back", song:"throwItback", cover:"week4", bpm:160},
+        {name:'Mild', cover:'week5', bpm:100},
+        {name:'Spice', cover:'week5', bpm:150},
+        {name:'Party Crasher', song:'party', cover:'week5', bpm:159},
+        {name:'Ur Girl', song:'girl', cover:'week6', bpm:144},
+        {name:'Chicken Sandwich', song:'chicken', cover:'week6', bpm:150},
+        {name:'Funkin God', song:'funkingod', cover:'flippy', bpm:190},
+        {name:'Beta VIP', song:'VIP', cover:'extras', bpm:155}
     ];
     var curSelected:Int = 0;
     private var screen:FlxCamera;
@@ -43,8 +52,9 @@ class JukeboxState extends MusicBeatState
 
     override function create()
     {
-
+        #if windows
         DiscordClient.changePresence("In the Jukebox Menu, Listening to music", null);
+        #end
 
         screen = new FlxCamera();
 		cam = new FlxCamera();
@@ -114,8 +124,11 @@ class JukeboxState extends MusicBeatState
             if(controls.ACCEPT)
             {
                 if(!FlxG.sound.music.playing)
+                {
                     FlxG.sound.music.play();
-                else{
+                }
+                else
+                {
                     FlxG.sound.music.pause();
                     songText.changeColor(FlxColor.WHITE);
                 }
@@ -135,55 +148,47 @@ class JukeboxState extends MusicBeatState
         else if(curSelected < 0)
             curSelected = songs.length - 1;
 
-        if(lime.utils.Assets.exists(Paths.image('covers/${songs[curSelected].image}', 'preload')))
+        if(lime.utils.Assets.exists(Paths.image('covers/${songs[curSelected].cover}', 'preload')))
         {
-            cover.loadGraphic(Paths.image('covers/${songs[curSelected].image}', 'preload'));
+            cover.loadGraphic(Paths.image('covers/${songs[curSelected].cover}', 'preload'));
             cover.screenCenter(X);
-        }else{
+        }
+        else
+        {
             trace('cover does not exist for ${songs[curSelected].name}');
         }
 
         songText.text = '< ${songs[curSelected].name} >';
         Conductor.changeBPM(songs[curSelected].bpm);
+       
+        var songName:String = songs[curSelected].song == null ? songs[curSelected].name.toLowerCase() : songs[curSelected].song;
+        trace('NEXT SONG: $songName');
 
-        #if sys
-        if(!loadedSongs.contains(songs[curSelected].name))
+        if(!loadedSongs.contains(songName))
         {
-            loadedSongs.push(songs[curSelected].name);
+            loadedSongs.push(songName);
+            #if sys
             sys.thread.Thread.create(() -> {
-                FlxG.sound.playMusic(Paths.music(songs[curSelected].path), 0.75);
+                FlxG.sound.playMusic(Paths.music(songName), 0.75);
                 FlxG.sound.music.pause();
                 lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
-            }); 
-        }else{
-            FlxG.sound.playMusic(Paths.music(songs[curSelected].path), 0.75);
+            });
+            #else
+            FlxG.sound.playMusic(Paths.music(songName), 0.75);
+            FlxG.sound.music.pause();
+            lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
+            #end
+        }
+        else
+        {
+            FlxG.sound.playMusic(Paths.music(songName), 0.75);
             FlxG.sound.music.pause();
             lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
         }
-        #else
-        FlxG.sound.playMusic(Paths.music(songs[curSelected].path), 0.75);
-        FlxG.sound.music.pause();
-        lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
-        #end
     }
 
     override function beatHit()
     {
         screen.zoom += 0.015;
-    }
-}
-
-class JukeboxSong
-{
-    public var name:String;
-    public var path:String;
-    public var bpm:Float;
-    public var image:String;
-    public function new(_name:String, _path:String, _img:String, ?_bpm:Float)
-    {
-        name = _name;
-        path = _path;
-        image = _img;
-        bpm = _bpm;
     }
 }

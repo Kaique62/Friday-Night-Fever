@@ -11,13 +11,14 @@ Your girlfriend is also from space, and you're hiding some dark secrets from her
 ### v1.0.1 [Unreleased]
 - Main menu now has new effects and transitions
 - Added casual sprites to week 6 dialogue
-- New images in gallery
-- Optimized gallery images to not freeze the game on certain images
-- Reverted change to icons that made them cover up the screen on certain framerates
-- Fixed tracklist problems after completing a week
-- Fixed Funkin-God not having the correct game over animation
 - Fixed some week 4 dialogue expressions not working
 - Removed base game songs / characters from the files
+- Optimized gallery images to not freeze the game on certain images
+- New images in gallery
+- Fixed tracklist problems after completing a week
+- Fixed funkin-god not having the correct game over animation
+- You no longer have to beat the tutorial for the credits to appear at the end of Week 6
+- Jukebox code reworked
 
 ### v1.0
 - the mod came out lmao

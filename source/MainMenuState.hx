@@ -111,10 +111,10 @@ class MainMenuState extends MusicBeatState
 			selectedSomethin = true;
 			menuItem.x += 550;
 			FlxTween.tween(menuItem, {x: FlxG.width - menuItem.width + 5}, 0.65 + (0.12 * i), {ease:FlxEase.smoothStepInOut, onComplete:function(twn:FlxTween){
-				menuItem.updateHitbox();
 				if(menuItem.ID == optionShit.length - 1)
 				{
 					selectedSomethin = false;
+					changeItem();
 				}
 			}});
 		}
@@ -275,19 +275,22 @@ class MainMenuState extends MusicBeatState
 				spr.x = FlxG.width - spr.width + 5;
 		});
 		
-		FlxTween.cancelTweensOf(menuImage);
-		if(menuMap.get(optionShit[curSelected])[3])
+		if(huh != 0)
 		{
-			menuImage.y = FlxG.height;
-			FlxTween.tween(menuImage, {y:menuMap.get(optionShit[curSelected])[2]}, 0.36, {ease:FlxEase.smoothStepInOut});
+			FlxTween.cancelTweensOf(menuImage);
+			if(menuMap.get(optionShit[curSelected])[3])
+			{
+				menuImage.y = FlxG.height;
+				FlxTween.tween(menuImage, {y:menuMap.get(optionShit[curSelected])[2]}, 0.36, {ease:FlxEase.smoothStepInOut});
+			}
+			else
+			{
+				menuImage.y = menuMap.get(optionShit[curSelected])[2];
+			}
+			
+			menuImage.loadGraphic(Paths.image(menuMap.get(optionShit[curSelected])[0]));
+			menuImage.updateHitbox();
+			menuImage.x = menuMap.get(optionShit[curSelected])[1];
 		}
-		else
-		{
-			menuImage.y = menuMap.get(optionShit[curSelected])[2];
-		}
-		
-		menuImage.loadGraphic(Paths.image(menuMap.get(optionShit[curSelected])[0]));
-		menuImage.updateHitbox();
-		menuImage.x = menuMap.get(optionShit[curSelected])[1];
 	}
 }

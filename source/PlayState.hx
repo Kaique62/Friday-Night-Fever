@@ -1931,7 +1931,6 @@ class PlayState extends MusicBeatState
 		if (FlxG.keys.justPressed.SPACE)
 		{
 			boyfriend.playAnim('hey');
-
 			gf.playAnim('cheer');
 		}
 
@@ -2715,7 +2714,7 @@ class PlayState extends MusicBeatState
 						}
 						else
 						{
-							for(week in 0...StoryMenuState.weekData.length)
+							for(week in 1...StoryMenuState.weekData.length)
 							{
 								var break_MainLoop:Bool = false;
 								for(difficulty in 0...3)

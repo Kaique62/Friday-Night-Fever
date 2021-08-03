@@ -20,6 +20,7 @@ Your girlfriend is also from space, and you're hiding some dark secrets from her
 - Jukebox code reworked
 - Ending dialogue no longer plays in freeplay
 - Skip and Main Menu buttons have been turned into keys you press, instead of clickable buttons.
+- Added somethin to "Crucify" on HARD PLUS.
 
 ### v1.0
 - the mod came out lmao

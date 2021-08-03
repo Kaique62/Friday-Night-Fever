@@ -50,6 +50,13 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
+		logoBl = new FlxSprite(364, 7);
+		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl.antialiasing = true;
+		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
+		logoBl.animation.play('bump');
+		logoBl.updateHitbox();
+		
 		#if polymod
 		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
 		#end
@@ -153,12 +160,6 @@ class TitleState extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);
 
-		logoBl = new FlxSprite(364, 7);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
-		logoBl.antialiasing = true;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
-		logoBl.animation.play('bump');
-		logoBl.updateHitbox();
 		add(logoBl);
 
 		feverTown = new FlxSprite(355, 380);
@@ -332,7 +333,7 @@ class TitleState extends MusicBeatState
 
 		if(curBeat > 7)
 			ngSpr.visible = false;
-		
+
 		switch (curBeat)
 		{
 			case 1:

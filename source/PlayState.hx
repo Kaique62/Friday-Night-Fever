@@ -1128,6 +1128,7 @@ class PlayState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('jumpscare', 'shared'));
 			jumpscarerare.visible = false;
 		}
+		
 		camHUD.visible = true;
 		dad.visible = false;
 		camFollow.x += 0;

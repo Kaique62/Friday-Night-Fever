@@ -8,7 +8,7 @@ Your girlfriend is also from space, and you're hiding some dark secrets from her
 
 # Changelog
 
-### v1.0.1
+### v1.1
 - Main menu now has new effects and transitions
 - Fixed some week 4 dialogue expressions not working
 - Removed base game songs / characters from the files

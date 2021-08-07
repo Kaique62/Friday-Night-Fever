@@ -19,7 +19,6 @@ class HealthIcon extends FlxSprite
 		animation.add('bf', [0, 1], 0, false, isPlayer);
 		animation.add('bf-casual', [0, 1], 0, false, isPlayer);
 		animation.add('bf-casualdemon', [0, 1], 0, false, isPlayer);
-		animation.add('bf-8bit', [0, 1], 0, false, isPlayer);
 		animation.add('bfdemoncesar', [2, 3], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
 		animation.add('bf-carnight', [0, 1], 0, false, isPlayer);
@@ -35,7 +34,6 @@ class HealthIcon extends FlxSprite
 		animation.add('tankman', [8, 9], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
 		animation.add('yukichi', [20, 21], 0, false, isPlayer);
-		animation.add('yukichi-8bit', [20, 21], 0, false, isPlayer);
 		animation.add('dad', [4, 5], 0, false, isPlayer);
 		animation.add('peasus', [25, 26], 0, false, isPlayer);
 		animation.add('senpai', [16, 16], 0, false, isPlayer);

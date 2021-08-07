@@ -33,7 +33,7 @@ class Character extends FlxSprite
 		{
 			// FEVER + FEVER VARIANTS \\
 			case 'bf':
-				iconColor = 'A5004D';
+				iconColor = 'C353E3';
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
 				frames = tex;
 
@@ -77,7 +77,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-casual':
-				iconColor = 'A5004D';
+				iconColor = 'C353E3';
 				var tex = Paths.getSparrowAtlas('characters/casFEVER', 'shared');
 				frames = tex;
 
@@ -122,7 +122,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-casualdemon':
-				iconColor = 'A5004D';
+				iconColor = 'E353C8';
 				var tex = Paths.getSparrowAtlas('characters/casDEMON', 'shared');
 				frames = tex;
 
@@ -167,7 +167,7 @@ class Character extends FlxSprite
 				flipX = true;
 			
 			case 'bfdemoncesar':
-				iconColor = 'A5004D';
+				iconColor = 'E353C8';
 				var tex = Paths.getSparrowAtlas('characters/demonCesar', 'shared');
 				frames = tex;
 
@@ -211,38 +211,8 @@ class Character extends FlxSprite
 
 				flipX = true;
 
-			case 'bf-christmas':
-				iconColor = 'A5004D';
-				var tex = Paths.getSparrowAtlas('characters/bfChristmas');
-				frames = tex;
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
-
-				addOffset('idle', -5);
-				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -38, -7);
-				addOffset("singLEFT", 12, -6);
-				addOffset("singDOWN", -10, -50);
-				addOffset("singUPmiss", -29, 27);
-				addOffset("singRIGHTmiss", -30, 21);
-				addOffset("singLEFTmiss", 12, 24);
-				addOffset("singDOWNmiss", -11, -19);
-				addOffset("hey", 7, 4);
-
-				playAnim('idle');
-
-				flipX = true;
-
 			case 'bf-car':
-				iconColor = 'A5004D';
+				iconColor = 'C353E3';
 				var tex = Paths.getSparrowAtlas('characters/bfCar');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
@@ -269,7 +239,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-carnight':
-				iconColor = 'A5004D';
+				iconColor = 'E353C8';
 				var tex = Paths.getSparrowAtlas('characters/bfCarNIGHT', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
@@ -296,7 +266,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-pixel':
-				iconColor = 'A5004D';
+				iconColor = 'C353E3';
 				frames = Paths.getSparrowAtlas('characters/bfPixel');
 				animation.addByPrefix('idle', 'BF IDLE', 24, false);
 				animation.addByPrefix('singUP', 'BF UP NOTE', 24, false);
@@ -331,7 +301,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-pixeldemon':
-				iconColor = 'A5004D';
+				iconColor = 'E353C8';
 				frames = Paths.getSparrowAtlas('characters/demonCesarPixel');
 				animation.addByPrefix('idle', 'BF IDLE', 24, false);
 				animation.addByPrefix('singUP', 'BF UP NOTE', 24, false);
@@ -366,7 +336,7 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'bf-pixel-dead':
-				iconColor = 'A5004D';
+				iconColor = 'E353C8';
 				frames = Paths.getSparrowAtlas('characters/bfPixelsDEAD');
 				animation.addByPrefix('singUP', "BF Dies pixel", 24, false);
 				animation.addByPrefix('firstDeath', "BF Dies pixel", 24, false);
@@ -387,7 +357,7 @@ class Character extends FlxSprite
 			// TEA + TEA VARIANTS \\
 
 			case 'gf':
-				iconColor = 'A5004D';
+				iconColor = '99DBF6';
 				tex = Paths.getSparrowAtlas('characters/GF_assets');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
@@ -419,7 +389,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'gf-christmas':
-				iconColor = 'A5004D';
+				iconColor = '99DBF6';
 				tex = Paths.getSparrowAtlas('characters/gfChristmas');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
@@ -451,7 +421,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'gf-car':
-				iconColor = 'A5004D';
+				iconColor = '99DBF6';
 				tex = Paths.getSparrowAtlas('characters/gfCar');
 				frames = tex;
 				animation.addByIndices('singUP', 'GF Dancing Beat', [0], "", 24, false);
@@ -465,7 +435,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'gf-carnight':
-				iconColor = 'A5004D';
+				iconColor = '99DBF6';
 				tex = Paths.getSparrowAtlas('characters/gfCarNIGHT', 'shared');
 				frames = tex;
 				animation.addByIndices('singUP', 'GF Dancing Beat', [0], "", 24, false);
@@ -478,7 +448,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'gf-pixel':
-				iconColor = 'A5004D';
+				iconColor = '99DBF6';
 				tex = Paths.getSparrowAtlas('characters/gfPixel');
 				frames = tex;
 				animation.addByIndices('singUP', 'GF IDLE', [2], "", 24, false);
@@ -497,7 +467,7 @@ class Character extends FlxSprite
 			// PEAKEK + PEAKEK VARIANT \\
 
 			case 'dad':
-				iconColor = 'A5004D';
+				iconColor = '99D4F4';
 				tex = Paths.getSparrowAtlas('characters/DADDY_DEAREST', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Dad idle dance', 24);
@@ -515,7 +485,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'peasus':
-				iconColor = 'A5004D';
+				iconColor = '99D4F4';
 				tex = Paths.getSparrowAtlas('characters/peaky_horny', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Dad idle dance', 24);
@@ -533,7 +503,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'spooky': // WEE AND WOLFIE
-				iconColor = 'A5004D';
+				iconColor = '5CBEFF';
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
 				animation.addByPrefix('singUP', 'spooky UP NOTE', 24, false);
@@ -554,7 +524,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'monster': // TAKI
-				iconColor = 'A5004D';
+				iconColor = 'D34470';
 				tex = Paths.getSparrowAtlas('characters/Monster_Assets');
 				frames = tex;
 				animation.addByPrefix('idle', 'monster idle', 24, false);
@@ -572,7 +542,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 			
 			case 'pico': // MAKO
-				iconColor = 'A5004D';
+				iconColor = '47CC40';
 				tex = Paths.getSparrowAtlas('characters/Pico_FNF_assetss');
 				frames = tex;
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
@@ -590,7 +560,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'makocorrupt': // CORRUPT MAKO
-				iconColor = 'A5004D';
+				iconColor = '47CC40';
 				flipX = true;
 				frames = Paths.getSparrowAtlas('characters/makoCorrupt');
 				
@@ -610,7 +580,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'mom-car': // HUNNII
-				iconColor = 'A5004D';
+				iconColor = 'FF517E';
 				tex = Paths.getSparrowAtlas('characters/momCar');
 				frames = tex;
 
@@ -631,7 +601,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'mom-carnight': // HUNNII DARK
-				iconColor = 'A5004D';
+				iconColor = 'FF517E';
 				tex = Paths.getSparrowAtlas('characters/momCarNIGHT', 'shared');
 				frames = tex;
 
@@ -652,7 +622,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'monster-christmas': // THE PEPPER DEMON
-				iconColor = 'A5004D';
+				iconColor = '7F64DA';
 				tex = Paths.getSparrowAtlas('characters/dickbutt');
 				frames = tex;
 				animation.addByPrefix('idle', 'Pepper Idle', 24, false);
@@ -669,7 +639,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 			
 			case 'yukichi': // YUKICHI
-				iconColor = 'A5004D';
+				iconColor = 'FF97F0';
 				frames = Paths.getSparrowAtlas('characters/yukichi_leader_assets', 'shared');
 
 				animation.addByPrefix('idle', 'yukichi idle', 24);
@@ -689,7 +659,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'senpai': // MEGA
-				iconColor = 'A5004D';
+				iconColor = '9F0030';
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Senpai Idle', 24, false);
 				animation.addByPrefix('singUP', 'SENPAI UP NOTE', 24, false);
@@ -711,7 +681,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 			case 'senpai-angry': // PISSED MEGA
-				iconColor = 'A5004D';
+				iconColor = '9F0030';
 				frames = Paths.getSparrowAtlas('characters/senpai');
 				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);
 				animation.addByPrefix('singUP', 'Angry Senpai UP NOTE', 24, false);
@@ -732,29 +702,7 @@ class Character extends FlxSprite
 				antialiasing = false;
 
 			case 'spirit': //FLIPPY
-				iconColor = 'A5004D';
-				frames = Paths.getPackerAtlas('characters/spirit');
-				animation.addByPrefix('idle', "idle spirit_", 24, false);
-				animation.addByPrefix('singUP', "up_", 24, false);
-				animation.addByPrefix('singRIGHT', "right_", 24, false);
-				animation.addByPrefix('singLEFT', "left_", 24, false);
-				animation.addByPrefix('singDOWN', "spirit down_", 24, false);
-
-				addOffset('idle', -220, -280);
-				addOffset('singUP', -90, -112);
-				addOffset("singRIGHT", -275, -267);
-				addOffset("singLEFT", -45, -219);
-				addOffset("singDOWN", -200, -502);
-
-				setGraphicSize(Std.int(width * 6));
-				updateHitbox();
-
-				playAnim('idle');
-
-				antialiasing = false;
-
-			case 'other': //THE MEAT
-				iconColor = 'A5004D';
+				iconColor = '4E4E4E';
 				frames = Paths.getPackerAtlas('characters/spirit');
 				animation.addByPrefix('idle', "idle spirit_", 24, false);
 				animation.addByPrefix('singUP', "up_", 24, false);

@@ -3582,6 +3582,21 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 
+		if (curStep == 94 && curSong =='Bazinga')
+		{
+			dad.playAnim('singLEFT', true);
+		}
+
+		if (curStep == 97 || curStep == 99 && curSong =='Bazinga')
+		{
+			dad.playAnim('singDOWN', true);
+		}
+
+		if (curStep == 122 && curSong =='Bazinga')
+		{
+			dad.playAnim('idle', true);
+		}
+
 		#if windows
 		if (executeModchart && luaModchart != null)
 		{

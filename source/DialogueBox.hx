@@ -35,6 +35,7 @@ class DialogueBox extends FlxSpriteGroup
 	var fever:FlxSprite;
 	var tea:FlxSprite;
 	var mako:FlxSprite;
+	var taki:FlxSprite;
 	var nar:FlxSprite;
 	var demomFever:FlxSprite;
 	var NPC:FlxSprite;
@@ -42,7 +43,6 @@ class DialogueBox extends FlxSpriteGroup
 	var peakek:FlxSprite;
 	var feverspritesAGAIN:FlxSprite;
 	var wolfie:FlxSprite;
-	var taki:FlxSprite;
 	var demonFever:FlxSprite;
 	var pepperdemon:FlxSprite;
 	var yukichi:FlxSprite;
@@ -52,6 +52,7 @@ class DialogueBox extends FlxSpriteGroup
 	var flippy:FlxSprite;
 	var whyFEVER:FlxSprite;
 	var impy:FlxSprite;
+	var fluff:FlxSprite;
 
 	//var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
@@ -261,6 +262,14 @@ class DialogueBox extends FlxSpriteGroup
 		add(flippy);
 		flippy.visible = false;
 
+		fluff = new FlxSprite(400, -201);
+		fluff.frames = Paths.getSparrowAtlas('dialogue/fluffSprites');
+		fluff.animation.addByPrefix('fluffangry', 'fluffANGRY', 24, false);
+		fluff.animation.addByPrefix('fluffoop', 'fluffOOP', 24, false);
+		fluff.scrollFactor.set();
+		add(fluff);
+		fluff.visible = false;
+
 		makocorrupt = new FlxSprite(767, 66);
 		makocorrupt.frames = Paths.getSparrowAtlas('dialogue/MakoCorrupt');
 		makocorrupt.animation.addByPrefix('makocorrupt', 'MakoCorrupt', 24, false);
@@ -383,7 +392,8 @@ class DialogueBox extends FlxSpriteGroup
 			'hunni' => hunni,
 			'flippy' => flippy,
 			'whyFEVER' => whyFEVER,
-			'impy' => impy
+			'impy' => impy,
+			'fluff' => fluff
 		];
 	}
 
@@ -696,6 +706,12 @@ class DialogueBox extends FlxSpriteGroup
 						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Impy-Beep'), 0.6)];
 						hidePortraits('impy');
 						impy.animation.play(curCharacter);
+					}
+					else if(curCharacter.startsWith('fluff'))
+					{
+						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+						hidePortraits('fluff');
+						fluff.animation.play(curCharacter);
 					}
 			}
 		}

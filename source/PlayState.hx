@@ -3627,7 +3627,7 @@ class PlayState extends MusicBeatState
 	{
 		super.beatHit();
 
-		if (curBeat == 95 && curSong =='Party-Crasher')
+		if (curBeat == 95 || curBeat == 159 && curSong =='Party-Crasher')
 		{
 			shake = true;
 		}
@@ -3636,21 +3636,17 @@ class PlayState extends MusicBeatState
 			scanlines.visible = true;
 			dark.visible = true;
 		}
-		if (curBeat == 159 && curSong =='Party-Crasher')
-		{
-			shake = true;
-		}
 		if (curStep == 640 && curSong =='Party-Crasher')
 		{
 			scanlines.visible = false;
 			dark.visible = false;
 			shake = false;
 		}
-		
 		if (curBeat == 96 && curSong =='Party-Crasher')
 		{
 			shake = false;
 		}
+
 		if (curBeat == 47 && curSong =='Crucify')
 		{
 			if(storyDifficulty == 3)
@@ -3663,6 +3659,14 @@ class PlayState extends MusicBeatState
 			if(storyDifficulty == 3)
 			{
 				health1 = false;
+			}
+		}
+
+		if (curBeat == 50 && curSong =='Crucify')
+		{
+			if(storyDifficulty == 3)
+			{
+				health += 0.7;
 			}
 		}
 

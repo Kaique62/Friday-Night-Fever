@@ -3443,16 +3443,12 @@ class PlayState extends MusicBeatState
 					{
 						case 2:
 							boyfriend.playAnim('singUP', true);
-							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 						case 3:
 							boyfriend.playAnim('singRIGHT', true);
-							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 						case 1:
 							boyfriend.playAnim('singDOWN', true);
-							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 						case 0:
 							boyfriend.playAnim('singLEFT', true);
-							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 					}
 		
 					#if windows
@@ -3593,21 +3589,6 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 
-		if (curStep == 94 && curSong =='Bazinga')
-		{
-			dad.playAnim('singLEFT', true);
-		}
-
-		if (curStep == 97 || curStep == 99 && curSong =='Bazinga')
-		{
-			dad.playAnim('singDOWN', true);
-		}
-
-		if (curStep == 122 && curSong =='Bazinga')
-		{
-			dad.playAnim('idle', true);
-		}
-
 		#if windows
 		if (executeModchart && luaModchart != null)
 		{
@@ -3638,7 +3619,7 @@ class PlayState extends MusicBeatState
 	{
 		super.beatHit();
 
-		if (curBeat == 95 || curBeat == 159 && curSong =='Party-Crasher')
+		if (curBeat == 95 && curSong =='Party-Crasher')
 		{
 			shake = true;
 		}
@@ -3647,41 +3628,20 @@ class PlayState extends MusicBeatState
 			scanlines.visible = true;
 			dark.visible = true;
 		}
+		if (curBeat == 159 && curSong =='Party-Crasher')
+		{
+			shake = true;
+		}
 		if (curStep == 640 && curSong =='Party-Crasher')
 		{
 			scanlines.visible = false;
 			dark.visible = false;
 			shake = false;
 		}
+			
 		if (curBeat == 96 && curSong =='Party-Crasher')
 		{
 			shake = false;
-		}
-
-		if (FlxG.random.bool(1))
-		{
-				if (curBeat == 47 && curSong =='Crucify')
-				{
-					if(storyDifficulty == 3)
-					{
-						health1 = true;
-					}
-				}
-				if (curBeat == 50 && curSong =='Crucify')
-				{
-					if(storyDifficulty == 3)
-					{
-						health1 = false;
-					}
-				}
-		
-				if (curBeat == 50 && curSong =='Crucify')
-				{
-					if(storyDifficulty == 3)
-					{
-						health += 0.7;
-					}
-				}	
 		}
 
 		if (curBeat == 1 && curSong == 'Farmed')

@@ -319,7 +319,7 @@ class PlayState extends MusicBeatState
 	
 		//dialogue shit, it does the dialogue = txt file shit for u 
 		var dialogueString:String = SONG.song.toLowerCase() + '/dia';
-		if(SONG.song.toLowerCase() == 'honey' && FlxG.random.bool(50))
+		if(SONG.song.toLowerCase() == 'honey' && FlxG.random.bool(1))
 			dialogueString = 'honey/hunniSIMPS';
 		if(Assets.exists(Paths.txt(dialogueString)))
 		{

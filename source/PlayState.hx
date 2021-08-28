@@ -319,6 +319,8 @@ class PlayState extends MusicBeatState
 	
 		//dialogue shit, it does the dialogue = txt file shit for u 
 		var dialogueString:String = SONG.song.toLowerCase() + '/dia';
+		if(SONG.song.toLowerCase() == 'honey' && FlxG.random.bool(50))
+			dialogueString = 'honey/hunniSIMPS';
 		if(Assets.exists(Paths.txt(dialogueString)))
 		{
 			dialogue = CoolUtil.coolTextFile(Paths.txt(dialogueString));
@@ -3441,12 +3443,16 @@ class PlayState extends MusicBeatState
 					{
 						case 2:
 							boyfriend.playAnim('singUP', true);
+							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 						case 3:
 							boyfriend.playAnim('singRIGHT', true);
+							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 						case 1:
 							boyfriend.playAnim('singDOWN', true);
+							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 						case 0:
 							boyfriend.playAnim('singLEFT', true);
+							FlxG.sound.play(Paths.sound('CLAP'), 1.5);
 					}
 		
 					#if windows
@@ -3652,29 +3658,31 @@ class PlayState extends MusicBeatState
 			shake = false;
 		}
 
-		if (curBeat == 47 && curSong =='Crucify')
+		if (FlxG.random.bool(1))
 		{
-			if(storyDifficulty == 3)
-			{
-				health1 = true;
-			}
+				if (curBeat == 47 && curSong =='Crucify')
+				{
+					if(storyDifficulty == 3)
+					{
+						health1 = true;
+					}
+				}
+				if (curBeat == 50 && curSong =='Crucify')
+				{
+					if(storyDifficulty == 3)
+					{
+						health1 = false;
+					}
+				}
+		
+				if (curBeat == 50 && curSong =='Crucify')
+				{
+					if(storyDifficulty == 3)
+					{
+						health += 0.7;
+					}
+				}	
 		}
-		if (curBeat == 50 && curSong =='Crucify')
-		{
-			if(storyDifficulty == 3)
-			{
-				health1 = false;
-			}
-		}
-
-		if (curBeat == 50 && curSong =='Crucify')
-		{
-			if(storyDifficulty == 3)
-			{
-				health += 0.7;
-			}
-		}
-
 
 		if (curBeat == 1 && curSong == 'Farmed')
 			{

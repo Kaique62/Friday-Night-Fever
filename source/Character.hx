@@ -559,23 +559,24 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-			case 'makocorrupt': // CORRUPT MAKO
+			case 'makocorrupt': // OWO BROKEN EMO MAKO
 				iconColor = '47CC40';
 				flipX = true;
+
+				setGraphicSize(Std.int(width * 0.95));
 				frames = Paths.getSparrowAtlas('characters/makoCorrupt');
 				
 				animation.addByPrefix('idle', "Pico Idle Dance", 24);
 				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
 				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
-				
 				animation.addByPrefix('singLEFT', 'Pico Note Right0', 24, false);
 				animation.addByPrefix('singRIGHT', 'Pico NOTE LEFT0', 24, false);
 				
 				addOffset('idle');
-				addOffset("singUP", 37, 64);
-				addOffset("singRIGHT", 23, 3);
-				addOffset("singLEFT", -8, 47);
-				addOffset("singDOWN", -20, -7);
+				addOffset("singUP", 21, -37);
+				addOffset("singRIGHT", -12, 14);
+				addOffset("singLEFT", 26, 12);
+				addOffset("singDOWN", 21, 61);
 				
 				playAnim('idle');
 

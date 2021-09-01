@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="FlippySprites.png">
 <SubTexture name="fluffANGRY0000" x="0" y="0" width="1309" height="571" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
-<SubTexture name="fluffOOP0000" x="573" y="0" width="1309" height="571" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
+<SubTexture name="fluffOOP0000" x="0" y="573" width="1309" height="571" frameX="0" frameY="0" frameWidth="424" frameHeight="544" />
 </TextureAtlas>

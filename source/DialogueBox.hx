@@ -262,11 +262,12 @@ class DialogueBox extends FlxSpriteGroup
 		add(flippy);
 		flippy.visible = false;
 
-		fluff = new FlxSprite(400, -201);
+		fluff = new FlxSprite(400, 0);
 		fluff.frames = Paths.getSparrowAtlas('dialogue/fluffSprites');
 		fluff.animation.addByPrefix('fluffangry', 'fluffANGRY', 24, false);
 		fluff.animation.addByPrefix('fluffoop', 'fluffOOP', 24, false);
 		fluff.scrollFactor.set();
+		fluff.scale.set(0.72, 0.72);
 		add(fluff);
 		fluff.visible = false;
 

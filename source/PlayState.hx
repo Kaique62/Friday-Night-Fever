@@ -131,6 +131,7 @@ class PlayState extends MusicBeatState
 	private var accuracy:Float = 0.00;
 	private var accuracyDefault:Float = 0.00;
 	private var totalNotesHit:Float = 0;
+	private var floatshit:Float = 0; // thanks panzu :thumbs:
 	private var totalNotesHitDefault:Float = 0;
 	private var totalPlayed:Int = 0;
 	private var ss:Bool = false;
@@ -704,8 +705,8 @@ class PlayState extends MusicBeatState
 				dad.y += 10;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'makocorrupt':
-				dad.y += 350;
-				dad.x -= 1;
+				dad.y -= 100;
+				dad.x -= 20;
 			case 'mom-car':
 				dad.x -= 100;
 			case 'mom-carnight':
@@ -1826,6 +1827,7 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		floatshit += 0.1;
 		#if !debug
 		perfectMode = false;
 		#end
@@ -1992,6 +1994,9 @@ class PlayState extends MusicBeatState
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
+		if (dad.curCharacter == "makocorrupt"){
+			dad.y += Math.sin(floatshit);
+		}
 
 		iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, 0.50)));
 		iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, 0.50)));
@@ -2006,19 +2011,24 @@ class PlayState extends MusicBeatState
 
 		if (health > 2)
 			health = 2;
-		if (healthBar.percent < 20)
+		if (healthBar.percent < 20){
 			iconP1.animation.curAnim.curFrame = 1;
-		else
-			iconP1.animation.curAnim.curFrame = 0;
-
-		if (healthBar.percent > 80){
-			iconP1.animation.curAnim.curFrame = 1;
-			iconP2.animation.curAnim.curFrame = 1;
+			iconP2.animation.curAnim.curFrame = 2;
 		}
 		else
 		{
-			iconP2.animation.curAnim.curFrame = 0;
 			iconP1.animation.curAnim.curFrame = 0;
+			iconP2.animation.curAnim.curFrame = 0;
+		}
+
+		if (healthBar.percent > 80){
+			iconP2.animation.curAnim.curFrame = 1;
+			iconP1.animation.curAnim.curFrame = 2;
+		}
+		else
+		{
+			iconP1.animation.curAnim.curFrame = 0;
+			iconP2.animation.curAnim.curFrame = 0;
 		}
 
 		/* if (FlxG.keys.justPressed.NINE)

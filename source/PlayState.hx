@@ -320,8 +320,8 @@ class PlayState extends MusicBeatState
 	
 		//dialogue shit, it does the dialogue = txt file shit for u 
 		var dialogueString:String = SONG.song.toLowerCase() + '/dia';
-		if(SONG.song.toLowerCase() == 'honey' && FlxG.random.bool(1))
-			dialogueString = 'honey/hunniSIMPS';
+		//if(SONG.song.toLowerCase() == 'spice' && FlxG.random.bool(1))
+		//	dialogueString = 'spice/dia2';
 		if(Assets.exists(Paths.txt(dialogueString)))
 		{
 			dialogue = CoolUtil.coolTextFile(Paths.txt(dialogueString));
@@ -702,11 +702,11 @@ class PlayState extends MusicBeatState
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'spirit':
 				dad.x -= 300;
-				dad.y += 10;
+				dad.y -= 20;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
 			case 'makocorrupt':
 				dad.y -= 100;
-				dad.x -= 20;
+				dad.x -= 290;
 			case 'mom-car':
 				dad.x -= 100;
 			case 'mom-carnight':
@@ -2011,25 +2011,20 @@ class PlayState extends MusicBeatState
 
 		if (health > 2)
 			health = 2;
-		if (healthBar.percent < 20){
-			iconP1.animation.curAnim.curFrame = 1;
-			iconP2.animation.curAnim.curFrame = 2;
-		}
-		else
-		{
-			iconP1.animation.curAnim.curFrame = 0;
-			iconP2.animation.curAnim.curFrame = 0;
-		}
 
-		if (healthBar.percent > 80){
-			iconP2.animation.curAnim.curFrame = 1;
+		if (healthBar.percent > 80 && healthBar.percent > 20)
 			iconP1.animation.curAnim.curFrame = 2;
-		}
-		else
-		{
+		else if (healthBar.percent < 80 && healthBar.percent < 20)
+			iconP1.animation.curAnim.curFrame = 1;
+		else if (healthBar.percent < 80 && healthBar.percent > 20)
 			iconP1.animation.curAnim.curFrame = 0;
+	
+		if (healthBar.percent > 80 && healthBar.percent > 20)
+			iconP2.animation.curAnim.curFrame = 1;
+		else if (healthBar.percent < 80 && healthBar.percent < 20)
+			iconP2.animation.curAnim.curFrame = 2;
+		else if (healthBar.percent < 80 && healthBar.percent > 20)
 			iconP2.animation.curAnim.curFrame = 0;
-		}
 
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
@@ -3594,6 +3589,17 @@ class PlayState extends MusicBeatState
 	override function stepHit()
 	{
 		super.stepHit();
+
+		if (curStep == 121 && curSong =='Bazinga')
+		{
+			health += 0.32;
+		}
+
+		if (curStep == 1524 && curSong =='Bazinga')
+		{
+			health += 0.40;
+		}
+
 		if (FlxG.sound.music.time > Conductor.songPosition + 20 || FlxG.sound.music.time < Conductor.songPosition - 20)
 		{
 			resyncVocals();

@@ -93,7 +93,7 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'ur-girl' | 'makomelon' | 'tutorial' | 'metamorphosis' | 'void' | 'bazinga' | 'down-bad' | 'party-crasher' | 'chicken-sandwich' | 'funkin-god' | 'crucify' | 'thriller' | 'legendary' | 'farmed' | 'vip' | 'honey' | 'bunnii' | 'throw-it-back' | 'spice' | 'mild':
+			case 'ur-girl' | 'mako' | 'tutorial' | 'metamorphosis' | 'void' | 'bazinga' | 'down-bad' | 'party-crasher' | 'chicken-sandwich' | 'funkin-god' | 'crucify' | 'thriller' | 'legendary' | 'farmed' | 'vim' | 'honey' | 'bunnii' | 'throw-it-back' | 'spice' | 'mild':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('dialogue/textbox');
 				box.animation.addByPrefix('normalOpen', 'textbox idle', 24, false);
@@ -710,7 +710,7 @@ class DialogueBox extends FlxSpriteGroup
 					}
 					else if(curCharacter.startsWith('fluff'))
 					{
-						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Fluff-Beep'), 0.6)];
 						hidePortraits('fluff');
 						fluff.animation.play(curCharacter);
 					}

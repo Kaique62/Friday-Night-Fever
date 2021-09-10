@@ -44,7 +44,10 @@ class GalleryState extends MusicBeatState
         new GalleryImage('gallery/0M0MARI', 'Fanart of Taki made by @0M0MARI on twitter!', 'Fanart'),
         new GalleryImage('gallery/corruptcrumb', 'Fanart of Taki made by @CorruptCrumb on twitter!', 'Fanart'),
         new GalleryImage('gallery/gingmiluki', 'Fanart of Taki made by @GingaMiluki on twitter!', 'Fanart'),
-        new GalleryImage('gallery/r0llindownhill', 'Fanart of Week 5 made by @R0llinDownHill on twitter!', 'Fanart')
+        new GalleryImage('gallery/r0llindownhill', 'Fanart of Week 5 made by @R0llinDownHill on twitter!', 'Fanart'),
+        new GalleryImage('gallery/basmega', 'Fanart of Mega made by @Leena73784282 on twitter!', 'Fanart'),
+        new GalleryImage('gallery/bastaki', 'Fanart of Taki made by @Leena73784282 on twitter!', 'Fanart'),
+        new GalleryImage('gallery/baspeakek', 'Fanart of Peakek made by @Leena73784282 on twitter!', 'Fanart'),
     ];
 
     var image:FlxSprite;

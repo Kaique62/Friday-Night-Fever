@@ -27,7 +27,7 @@ class StoryMenuState extends MusicBeatState
 		['Tutorial'],
 		['Metamorphosis', 'Void', 'Down-bad'],
 		['Thriller', 'Legendary', 'Bazinga', 'Crucify'],
-		['Makomelon', 'VIP', "Farmed"],
+		['Mako', 'VIM', "Farmed"],
 		['Honey', "Bunnii", "Throw-it-back"],
 		['Mild', 'Spice', 'Party-Crasher'],
 		['Ur-girl', 'Chicken-sandwich', 'Funkin-god']

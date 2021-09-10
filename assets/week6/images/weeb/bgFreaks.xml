@@ -20,19 +20,18 @@
 	<SubTexture name="BG fangirls dissuaded0015" x="461" y="106" width="451" height="96"/>
 	<SubTexture name="BG fangirls dissuaded0016" x="0" y="212" width="451" height="96"/>
 	<SubTexture name="BG fangirls dissuaded0017" x="0" y="212" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0018" x="461" y="212" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0019" x="461" y="212" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0020" x="0" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0021" x="0" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0022" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0023" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0024" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0025" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0026" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0027" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0028" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG fangirls dissuaded0029" x="461" y="318" width="451" height="96"/>
-	<SubTexture name="BG girls group0000" x="0" y="424" width="450" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0018" x="0" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0019" x="0" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0020" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0021" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0022" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0023" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0024" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0025" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0026" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0027" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0028" x="461" y="212" width="451" height="96"/>
+	<SubTexture name="BG fangirls dissuaded0029" x="461" y="212" width="451" height="96"/>
 	<SubTexture name="BG girls group0001" x="0" y="424" width="450" height="96"/>
 	<SubTexture name="BG girls group0002" x="460" y="424" width="450" height="96"/>
 	<SubTexture name="BG girls group0003" x="460" y="424" width="450" height="96"/>

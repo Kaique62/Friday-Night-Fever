@@ -34,6 +34,7 @@ class CreditsState extends MusicBeatState
         // programming
         {image:"isophoro",link:"https://twitter.com/isophoro", desc:"Carried the Mod :smug:"},
         {image:"rifxii",link:"https://twitter.com/_rifxii", desc:"Also Carried the Mod :smug:"}, // what tf is this asshole doing here???
+        {image:"tktems",link:"https://twitter.com/TKTems", desc:"Just here to code :sad:"}, //me!
         {image:"kade",link:"https://twitter.com/kadedeveloper", desc:"made da engine"},
         //artists
         {image:"bastard",link:"https://www.youtube.com/channel/UCtdUKnJQ70psMKmo7E3G0Dg", desc:"First two Week 5 Crowds, Week 4 Bunnies."},

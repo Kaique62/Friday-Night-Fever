@@ -712,10 +712,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', "spirit down_", 24, false);
 
 				addOffset('idle', -220, -280);
-				addOffset('singUP', -90, -112);
-				addOffset("singRIGHT", -275, -267);
-				addOffset("singLEFT", -45, -219);
-				addOffset("singDOWN", -200, -502);
+				addOffset('singUP', -496, -106);
+				addOffset("singRIGHT", -244, -316);
+				addOffset("singLEFT", -316, -310);
+				addOffset("singDOWN", -628, -616);
 
 				setGraphicSize(Std.int(width * 6));
 				updateHitbox();

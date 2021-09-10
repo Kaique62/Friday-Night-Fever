@@ -6,9 +6,9 @@ Thriller:spooky:2
 Legendary:spooky:2
 Bazinga:monster:2
 Crucify:monster:2
-Makomelon:pico:3
-VIP:pico:3
-Farmed:pico:3
+Mako:pico:3
+VIM:pico:3
+Farmed:makocorrupt:3
 Honey:mom:4
 Bunnii:mom:4
 Throw-it-back:mom:4

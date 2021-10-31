@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="tea_bat.png">
+	<!-- Created with Adobe Animate version 21.0.4.39603 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="tea bat down0000" x="0" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0001" x="0" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0002" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0003" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0004" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0005" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0006" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0007" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat down0008" x="694" y="0" width="694" height="584"/>
+	<SubTexture name="tea bat idle0000" x="1388" y="0" width="700" height="650"/>
+	<SubTexture name="tea bat idle0001" x="1388" y="0" width="700" height="650"/>
+	<SubTexture name="tea bat idle0002" x="2088" y="0" width="700" height="650"/>
+	<SubTexture name="tea bat idle0003" x="2088" y="0" width="700" height="650"/>
+	<SubTexture name="tea bat idle0004" x="2788" y="0" width="700" height="650"/>
+	<SubTexture name="tea bat idle0005" x="2788" y="0" width="700" height="650"/>
+	<SubTexture name="tea bat idle0006" x="0" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0007" x="0" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0008" x="700" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0009" x="700" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0010" x="1400" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0011" x="1400" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0012" x="2100" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat idle0013" x="2100" y="650" width="700" height="650"/>
+	<SubTexture name="tea bat left0000" x="2800" y="650" width="679" height="583"/>
+	<SubTexture name="tea bat left0001" x="2800" y="650" width="679" height="583"/>
+	<SubTexture name="tea bat left0002" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat left0003" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat left0004" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat left0005" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat left0006" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat left0007" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat left0008" x="0" y="1300" width="679" height="583"/>
+	<SubTexture name="tea bat right0000" x="679" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0001" x="679" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0002" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0003" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0004" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0005" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0006" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0007" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat right0008" x="1180" y="1300" width="501" height="587"/>
+	<SubTexture name="tea bat up0000" x="1681" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0001" x="1681" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0002" x="2352" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0003" x="2352" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0004" x="2352" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0005" x="2352" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0006" x="2352" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0007" x="2352" y="1300" width="671" height="604"/>
+	<SubTexture name="tea bat up0008" x="2352" y="1300" width="671" height="604"/>
+</TextureAtlas>

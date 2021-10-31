@@ -1,0 +1,44 @@
+:bg: plainblacklol
+:defrown: Finally out of that painting.
+:defrown: It was getting way too hot in there.
+:hallowenough: GrRrR?!?! AaAaAa!?!?
+:defrown: Hold on, I'll deal with you and your friends in a second.
+:desmile: Here, Tea. Come on, let's get you out of there.
+:teapainting: ...
+:sfx:oHShIT
+:teapainting: ...!
+:narrator: ...
+:teaworry: Huh?... What?... I...
+:defrown: Thank God, you're okay...
+:hallowenough: ?!?!
+:desmile: It's over now, give me a second, okay? Then we can go home.
+:teaworry: ...
+:desmile: ...
+:song:hostagesituation
+:defrown: Now. About YOU.
+:hallowenough: ...!?
+:defrown: I promised you hell, didn't I? You chose to mess with me, that's one thing.
+:defrown: But you brought her into the mix.
+:defrown: There's a place MUCH worse waiting for you.
+:hallowenough: AaAaAaA???
+:hidebg:
+:bg: feverfight
+:narrator: I want you to burn. Taking your soul ISN'T ENOUGH!
+:hallowenough: AAAAAA!-
+:hallowenough: Aa...
+:narrator: ...
+:narrator: ...
+:hidebg:
+:bg: plainblacklol
+:defrown: ...whew. The rest of you, run away.
+:hallowenough: Krrr! Let's leave!...
+:narrator: The rest of the ghosts run away.
+:narrator: Right after, Tea stirs awake.
+:teaworry: Huh? Fever? Where are we? What were you yelling about?...
+:desmile: Hey, don't worry about it. Just had to deal with someone.
+:desmile: No one's gonna bug us anymore. Come on, let's go home.
+:teaworry: Uh, okay...
+:desmile: Don't try to walk. I've got you.
+:defrown: ...
+:defrown: (I should stay in my demon form more...)
+

@@ -28,10 +28,12 @@ class JukeboxState extends MusicBeatState
         {name:"Metamorphosis", cover:"week1", bpm:160},
         {name:"Void", cover:"week1", bpm:140},
         {name:"Down Bad", song:"down-bad", cover:"week1", bpm:180},
-        {name:"Thriller", cover:"week2", bpm:150},
-        {name:"Legendary", cover:"week2", bpm:160},
+        {name:"Star Baby",  song:'starbaby', cover:"week2", bpm:180},
+        {name:"Last Meow", song:'lastmeow', cover:"week2", bpm:195},
         {name:"Bazinga", cover:"week2taki", bpm:190},
         {name:"Crucify", cover:"week2taki", bpm:200},
+        {name:'Prayer', song:'prayer', cover:'taki', bpm:140},
+        {name:'Bad Nun', song:'badnun', cover:'taki', bpm:140},
         {name:"Mako", song:"mako", cover:"week3", bpm:160},
         {name:"VIM", song:"vimCurrent", cover:"week3", bpm:170},
         {name:"Farmed", cover:"week3", bpm:160},
@@ -44,6 +46,9 @@ class JukeboxState extends MusicBeatState
         {name:'Ur Girl', song:'girl', cover:'week6', bpm:144},
         {name:'Chicken Sandwich', song:'chicken', cover:'week6', bpm:150},
         {name:'Funkin God', song:'funkingod', cover:'flippy', bpm:190},
+        {name:'Hallow', song:'hallow', cover:'hallow', bpm:130},
+        {name:'Portrait', song:'calamity', cover:'hallow', bpm:140},
+        {name:'Hardships', song:'hardships', cover:'hardships', bpm:120},
         {name:'Beta VIP', song:'VIP', cover:'extras', bpm:155}
     ];
     var curSelected:Int = 0;
@@ -67,6 +72,7 @@ class JukeboxState extends MusicBeatState
         persistentUpdate = true;
 
         super.create();
+
 
         screenbg = FlxGradient.createGradientFlxSprite(Std.int(FlxG.width),  Std.int(FlxG.height), [FlxColor.fromString('#58FFC7'), FlxColor.fromString('#C2FF8C')]);
         add(screenbg);
@@ -99,6 +105,10 @@ class JukeboxState extends MusicBeatState
         add(leaveText);
 
         songText.cameras = [screen];
+
+        var scanlines:FlxSprite = new FlxSprite().loadGraphic(Paths.image('Scanlines'));
+        scanlines.antialiasing = true;
+        add(scanlines);
 
         overlay = new FlxSprite(0,0).loadGraphic(Paths.image('LMAO'));
         overlay.antialiasing = true;

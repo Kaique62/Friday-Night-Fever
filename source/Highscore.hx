@@ -68,9 +68,9 @@ class Highscore
 	{
 		var daSong:String = song;
 
-		if (diff == 0 || diff == 4)
+		if (diff == 0 || diff == 3)
 			daSong += '-easy';
-		else if (diff == 2 || diff == 3)
+		else if (diff == 2)
 			daSong += '-hard';
 
 		trace(daSong);

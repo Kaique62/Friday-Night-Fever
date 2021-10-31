@@ -1,29 +1,30 @@
 :song:voidinst
 :bg:room
-:peahappy: Hey! hey! you're a lotta fun to play with~! But. . .
-:peacorrupt: I want to get a bit more serious. . .
+:peahappy: Hey, hey! You're a lotta fun to play with than I thought you'd be! But...
+:peacorrupt: I think it's time to get a bit more serious. . .
 :feverpointtwo: Would be a nice change of pace!
-:peacorrupt: This is probably the most fun I've had since I got to this damn place.
-:peahappy: There needs to be more excitement around here! 
+:peacorrupt: Gotta say, I'm more happy harmonizing with you than other people.
+:peacorrupt: Most people would've threatened me instantly. That or curse me out-
+:peacorrupt: Though, your whole work vibe is still SUPER boring.
 :feverflirt: Can’t agree. I’d say I've been having a lot of fun~.
-:teablush: You're lame.
-:kekhappy: I know. I’ve watched you two.
+:teablush: Pffft, you're lame.
+:kekhappy: Oh, I know. I’ve watched you two.
 :fuckoff:
 :sfx:recordscratch
 :teaworryjump: ?!
 :teaworry: HUH?
-:peahappy: Well, obviously I needed some pics for my smear campaign!
-:peahappy: Remember? The peep hole~?
+:peahappy: Well, obviously I needed some pics for my smear campaign.
+:peahappy: Remember? The peep hole?
 :feverpointtwo: That’s an invasion of privacy!
 :kekhappy: You guys didn't seem to hate it too much.
 :teaannoy: BRUH.
 :feverpointtwo: I'm gonna beat your ass if you don't shut up and start singing.
-:peahappy: You guys don't know how much I'm loving your embarrassed faces.
+:peahappy: You guys don't know how much I'm loving your expressions right now.
 :song:voidinst
-:feverpointtwo: You can’t embarrass us anymore than how you’ve embarrassed yourself today!
-:peahappy: I don’t see this as embarrassing!
-:desmile: Yeah? Well, how about fall off a cliff, you shit-faced cu-.
-:feverfine: Ow. Ow, shouldn’t do that for too long.
+:feverpointtwo: You can’t embarrass us anymore than how you’ve humiliated yourself today!
+:peahappy: I don’t see this as humiliating!
+:desmile: Yeah? Well, how about fall off a cliff, you stupid fu-
+:feverfine: Ow. Ow, shouldn’t do that too fast
 :teathink: Was wondering when that’d show up.
 :peasurprised: Huh? What was that?
 :feverannoyed: Do you really care? I’m just gonna beat you and kick you out.
@@ -31,4 +32,3 @@
 :teaneutral: Bet.
 :fuckoff:
 :kekhappy: Interesting . . .
-

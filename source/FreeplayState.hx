@@ -1,11 +1,13 @@
 package;
 
+import flixel.tweens.FlxTween;
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
@@ -25,10 +27,16 @@ class FreeplayState extends MusicBeatState
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 1;
 
+	var halloween:FlxText;
+
 	var scoreText:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
+	final secretCode:String = '354';
+	var userInput:String;
+	var secretFound:Bool = false;
+	var bghalloween:FlxSprite;
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
@@ -37,6 +45,10 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
+
+		PlayState.isHalloweenFreeplay = false;
+
+
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 
 		for (i in 0...initSonglist.length)
@@ -70,6 +82,17 @@ class FreeplayState extends MusicBeatState
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
 		add(bg);
+
+		bghalloween = new FlxSprite().loadGraphic(Paths.image('weekSix'));
+		add(bghalloween);
+		bghalloween.alpha = 0;
+
+		halloween = new FlxText(700, 0, "HALLOWEEN UPDATE SONG");
+		halloween.setFormat(Paths.font('vcr.ttf'), 40, FlxColor.ORANGE, CENTER, OUTLINE, FlxColor.BLACK);
+		halloween.scrollFactor.set();
+		add(halloween);
+		halloween.screenCenter(Y);
+		halloween.visible = false;
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
@@ -139,6 +162,9 @@ class FreeplayState extends MusicBeatState
 		 */
 
 		super.create();
+
+		userInput = secretCode;
+
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String)
@@ -163,6 +189,8 @@ class FreeplayState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		PlayState.isHalloweenFreeplay = false;
+		
 		super.update(elapsed);
 
 		if (FlxG.sound.music.volume < 0.7)
@@ -190,18 +218,74 @@ class FreeplayState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (controls.LEFT_P)
-			changeDiff(-1);
-		if (controls.RIGHT_P)
-			changeDiff(1);
+		if (songs[curSelected].songName != 'Hallow' || songs[curSelected].songName == 'Hardships' || songs[curSelected].songName == 'Portrait')
+		{
+			if (controls.LEFT_P)
+				changeDiff(-1);
+			if (controls.RIGHT_P)
+				changeDiff(1);
+		}
 
 		if (controls.BACK)
 		{
-			FlxG.switchState(new MainMenuState());
+			FlxG.switchState(new SelectingSongState());
 		}
+
+		if (FlxG.keys.justPressed.ANY && !secretFound)
+			{
+				var keyPressed = FlxG.keys.getIsDown()[0].ID.toString().toLowerCase();
+	
+				var numbers:Map<String, String> = [
+					'one' => '1', 
+					'two' => '2', 
+					'three' => '3', 
+					'four' => '4', 
+					'five' => '5', 
+					'six' => '6', 
+					'seven' => '7',
+					'eight' => '8', 
+					'nine' => '9', 
+					'zero' => '0'
+				];
+	
+				if(numbers.get(keyPressed) != null)
+					keyPressed = numbers.get(keyPressed);
+
+				if (userInput.charAt(0) == keyPressed)
+				{
+					userInput = userInput.substring(1, userInput.length);
+					trace(userInput);
+	
+					if (userInput.length <= 0)
+					{
+						secretFound = true;
+						trace('swag');
+	
+						var poop:String = Highscore.formatSong("C354R", 2);
+
+						PlayState.SONG = Song.loadFromJson(poop, "C354R");
+						PlayState.isStoryMode = false;
+						PlayState.storyDifficulty = 2;
+		
+						PlayState.storyWeek = 0;
+						PlayState.loadRep = false;
+						LoadingState.loadAndSwitchState(new PlayState());
+	
+					}
+				}
+				else
+				{
+					userInput = secretCode;
+				}
+			}
 
 		if (accepted)
 		{
+
+			PlayState.isHalloweenFreeplay = false;
+			FlxTransitionableState.skipNextTransIn = false;
+			FlxTransitionableState.skipNextTransOut = false;
+			
 			var poop:String = Highscore.formatSong(StringTools.replace(songs[curSelected].songName," ", "-").toLowerCase(), curDifficulty);
 
 			trace(poop);
@@ -219,9 +303,14 @@ class FreeplayState extends MusicBeatState
 	{
 		curDifficulty += change;
 
+		if (songs[curSelected].songName == 'Hallow' || songs[curSelected].songName == 'Hardships' || songs[curSelected].songName == 'Portrait'){
+			curDifficulty = 2;
+			diffText.color = FlxColor.ORANGE;
+		}
+
 		if (curDifficulty < 0)
-			curDifficulty = 4;
-		if (curDifficulty > 4)
+			curDifficulty = 3;
+		if (curDifficulty > 3)
 			curDifficulty = 0;
 
 		#if !switch
@@ -237,8 +326,6 @@ class FreeplayState extends MusicBeatState
 			case 2:
 				diffText.text = "HARD";
 			case 3:
-				diffText.text = "HARD +";
-			case 4:
 				diffText.text = "BABY";
 		}
 	}
@@ -254,10 +341,48 @@ class FreeplayState extends MusicBeatState
 
 		curSelected += change;
 
+		
+
+
 		if (curSelected < 0)
 			curSelected = songs.length - 1;
 		if (curSelected >= songs.length)
 			curSelected = 0;
+
+		
+		if(songs[curSelected].songName == 'Ur-girl' || songs[curSelected].songName == 'Chicken-sandwich' || songs[curSelected].songName == 'Funkin-god'){
+			bghalloween.visible = true;
+		}
+		else
+		{
+			bghalloween.visible = false;
+		}
+
+		if (songs[curSelected].songName == 'Hallow' || songs[curSelected].songName == 'Hardships' || songs[curSelected].songName == 'Portrait'){
+			curDifficulty = 2;
+			changeDiff();
+			halloween.visible = true;
+			diffText.color = FlxColor.ORANGE;
+			FlxTween.tween(bghalloween, {alpha: 1}, 1);
+			
+			#if windows
+			// Updating Discord Rich Presence
+			DiscordClient.changePresence("In the Halloween Selection (Freeplay)", null);
+			#end
+
+			
+		}
+		else
+		{
+			diffText.color = FlxColor.WHITE;
+			halloween.visible = false;
+			FlxTween.tween(bghalloween, {alpha: 0}, 1);
+
+			#if windows
+			// Updating Discord Rich Presence
+			DiscordClient.changePresence("In the Freeplay Menu", null);
+			#end
+		}
 
 		// selector.y = (70 * curSelected) + 30;
 
@@ -294,6 +419,9 @@ class FreeplayState extends MusicBeatState
 			}
 		}
 	}
+
+	function get_secretCode():String
+		return '354';
 }
 
 class SongMetadata

@@ -146,6 +146,8 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+
+		
 		elapsedTimer += elapsed;
 		if(elapsedTimer > 0.84)
 		{
@@ -239,7 +241,7 @@ class MainMenuState extends MusicBeatState
 				FlxG.switchState(new StoryMenuState());
 				trace("Story Menu Selected");
 			case 'freeplay':
-				FlxG.switchState(new FreeplayState());
+				FlxG.switchState(new SelectingSongState());
 
 				trace("Freeplay Menu Selected");
 			case 'jukebox':

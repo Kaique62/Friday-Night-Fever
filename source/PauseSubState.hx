@@ -21,17 +21,31 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = [];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Exit to menu'];
+	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
 	var perSongOffset:FlxText;
+	var scanlines:FlxSprite;
 	
 	var offsetChanged:Bool = false;
+	var levelDifficulty:FlxText;
+	var songText:Alphabet;
+	var levelInfo:FlxText;
 
 	public function new(x:Float, y:Float)
 	{
 		super();
+		menuItems = menuItemsOG;
+
+		
+		for (i in 0...CoolUtil.difficultyArray.length) {
+			var diff:String = '' + CoolUtil.difficultyArray[i];
+			difficultyChoices.push(diff);
+		}
+		difficultyChoices.push('BACK');
 
 		pauseMusic = new FlxSound().loadEmbedded(Paths.music('breakfast'), true, true);
 		pauseMusic.volume = 0;
@@ -44,14 +58,14 @@ class PauseSubState extends MusicBeatSubstate
 		bg.scrollFactor.set();
 		add(bg);
 
-		var levelInfo:FlxText = new FlxText(20, 15, 0, "", 32);
+		levelInfo = new FlxText(20, 15, 0, "", 32);
 		levelInfo.text += PlayState.SONG.song;
 		levelInfo.scrollFactor.set();
 		levelInfo.setFormat(Paths.font("vcr.ttf"), 32);
 		levelInfo.updateHitbox();
 		add(levelInfo);
 
-		var levelDifficulty:FlxText = new FlxText(20, 15 + 32, 0, "", 32);
+		levelDifficulty = new FlxText(20, 15 + 32, 0, "", 32);
 		levelDifficulty.text += CoolUtil.difficultyString();
 		levelDifficulty.scrollFactor.set();
 		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
@@ -80,11 +94,18 @@ class PauseSubState extends MusicBeatSubstate
 
 		for (i in 0...menuItems.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
+			songText = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
+			if(PlayState.font){
+				songText.screenCenter(X);
+			}
 			grpMenuShit.add(songText);
 		}
+
+		scanlines = new FlxSprite(0, 0).loadGraphic(Paths.image('effectShit/Scanlines'));
+		add(scanlines);
+		scanlines.visible = false;
 
 		changeSelection();
 
@@ -93,6 +114,16 @@ class PauseSubState extends MusicBeatSubstate
 
 	override function update(elapsed:Float)
 	{
+		if(PlayState.font){
+			levelDifficulty.setFormat(Paths.font('Retro Gaming.ttf'), 32);
+			levelInfo.setFormat(Paths.font("Retro Gaming.ttf"), 32);
+			perSongOffset.setFormat(Paths.font("Retro Gaming.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			levelDifficulty.screenCenter(X);
+			levelInfo.screenCenter(X);
+			perSongOffset.screenCenter(X);
+			
+			scanlines.visible = true;
+		}
 		if (pauseMusic.volume < 0.5)
 			pauseMusic.volume += 0.01 * elapsed;
 
@@ -174,6 +205,19 @@ class PauseSubState extends MusicBeatSubstate
 		if (accepted)
 		{
 			var daSelected:String = menuItems[curSelected];
+			for (i in 0...difficultyChoices.length-1) {
+				if(difficultyChoices[i] == daSelected) {
+					var name:String = PlayState.SONG.song.toLowerCase();
+					var poop = Highscore.formatSong(name, curSelected);
+					PlayState.SONG = Song.loadFromJson(poop, name);
+					PlayState.storyDifficulty = curSelected;
+					//CustomFadeTransition.nextCamera = transCamera;
+					FlxG.resetState();
+					FlxG.sound.music.volume = 0;
+					PlayState.changedDifficulty = true;
+					return;
+				}
+			} 
 
 			switch (daSelected)
 			{
@@ -181,7 +225,14 @@ class PauseSubState extends MusicBeatSubstate
 					close();
 				case "Restart Song":
 					FlxG.resetState();
+					PlayState.font = false;
+				case 'Change Difficulty':
+					menuItems = difficultyChoices;
+					regenMenu();
 				case "Exit to menu":
+					PlayState.font = false;
+					PlayState.changedDifficulty = false;
+
 					if(PlayState.loadRep)
 					{
 						FlxG.save.data.botplay = false;
@@ -200,6 +251,9 @@ class PauseSubState extends MusicBeatSubstate
 						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
 					
 					FlxG.switchState(new MainMenuState());
+				case 'BACK':
+					menuItems = menuItemsOG;
+					regenMenu();
 			}
 		}
 
@@ -215,6 +269,20 @@ class PauseSubState extends MusicBeatSubstate
 		pauseMusic.destroy();
 
 		super.destroy();
+	}
+
+	function regenMenu():Void {
+		for (i in 0...grpMenuShit.members.length) {
+			this.grpMenuShit.remove(this.grpMenuShit.members[0], true);
+		}
+		for (i in 0...menuItems.length) {
+			var item = new Alphabet(0, 70 * i + 30, menuItems[i], true, false);
+			item.isMenuItem = true;
+			item.targetY = i;
+			grpMenuShit.add(item);
+		}
+		curSelected = 0;
+		changeSelection();
 	}
 
 	function changeSelection(change:Int = 0):Void

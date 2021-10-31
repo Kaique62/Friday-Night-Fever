@@ -1,5 +1,6 @@
 package;
 
+import flixel.tweens.FlxEase;
 import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -8,7 +9,12 @@ import flixel.tweens.FlxTween;
 import openfl.Lib;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
+import flixel.FlxState;
 import flixel.system.FlxSound;
+import flixel.input.keyboard.FlxKey;
+
+using StringTools;
 
 typedef CreditCard = {
     var image:String;
@@ -20,6 +26,12 @@ class CreditsState extends MusicBeatState
 {
     var camFollow:FlxObject;
     var curSelected:Int = 0;
+    var blacktransitionLOL:FlxSprite;
+    var playasISO:FlxSprite;
+    var notfound:FlxSprite;
+	var userInput:String = '';
+    var run:FlxText;
+    var smile:FlxSprite;
     var cards:Array<FlxSprite> = [];
     var credits:Array<CreditCard> = [
         //{image:"",link:""} blank
@@ -46,15 +58,40 @@ class CreditsState extends MusicBeatState
         {image:"puma",link:"https://twitter.com/PumaThe7th", desc:"Did their Week 6 Cameo."},
         {image:"peakek",link:"https://twitter.com/PeakekArts", desc:"Made their own Assets."},
         {image:"hunni",link:"https://twitter.com/HuniBunnii", desc:"Made their own Assets."},
-        {image:"fluff",link:"https://twitter.com/FluffedCakes", desc:"Remade their assets 7 times/Original Coder."},
         {image:"circl",link:"https://twitter.com/JustACircleMan", desc:"Made Week 3 BG And Jukebox Covers."},
-        {image:"wolfiewee",link:"https://twitter.com/wolfiedust1", desc:"Made their own Assets."},
+        {image:"ethen",link:"https://twitter.com/BizarreEthen", desc:"Edited the trailers."},
+        {image:"lester",link:"https://twitter.com/_FPLester", desc:"Made Hallow songs."},
+        {image:"roll",link:"https://twitter.com/R0llinDownHill", desc:"EVERYTHING!!!!!"},
+        {image:"wolfiewee",link:"https://twitter.com/weejr2", desc:"Made their own Assets."},
         //charters
         {image:"fortnite",link:"https://twitter.com/vortmite1", desc:"vortmite charted all these songs"},
         //getrickrolled
         {image:"rickroll",link:"https://www.youtube.com/watch?v=dQw4w9WgXcQ", desc:"???"}
     ];
     var description:FlxText;
+
+    var passwords(get, never):Array<KeyCombo>;
+
+	inline function get_passwords():Array<KeyCombo>
+	{
+		return [
+			new KeyCombo('isophoro', () -> {
+				trace('isophoro');
+                PlayState.curBoyfriend = 'bfiso';
+
+                FlxTween.tween(blacktransitionLOL, {alpha: 1}, 1, {ease: FlxEase.circInOut});
+                FlxG.sound.music.fadeOut(1, 0);
+
+                new FlxTimer().start(2, function(tmr:FlxTimer){
+                    FlxG.sound.play(Paths.music('isoUnlock'));
+                    FlxTween.tween(playasISO, {alpha: 1}, 1, {ease: FlxEase.circInOut});
+                });
+			}),
+			new KeyCombo('kermo week when', () -> {
+				trace('but literally when fever');
+			}),
+		];
+	}
 
     override function create()
     {
@@ -99,6 +136,35 @@ class CreditsState extends MusicBeatState
         description.scrollFactor.set();
         add(description);
 
+        blacktransitionLOL = new FlxSprite(0, 0).makeGraphic(1280, 720, 0xFF000000);
+        blacktransitionLOL.alpha = 0;
+        blacktransitionLOL.scrollFactor.set();
+        add(blacktransitionLOL);
+        
+        playasISO = new FlxSprite(0,0).loadGraphic(Paths.image('credits/i can explain fever dont kill me'));
+        playasISO.scrollFactor.set();
+        playasISO.alpha = 0;
+        playasISO.antialiasing = true;
+        add(playasISO);
+
+        notfound = new FlxSprite(0,0).loadGraphic(Paths.image('notFound/notFound'));
+        notfound.scrollFactor.set();
+        notfound.visible = false;
+        notfound.antialiasing = true;
+        //add(notfound);
+
+        smile = new FlxSprite(427.9, 330.9);
+        smile.frames = Paths.getSparrowAtlas('notFound/smile');
+        smile.animation.addByPrefix('idle', 'iso idle');
+        smile.animation.play('idle', true);
+        //add(smile);
+        //smile.visible = false;
+
+        run = new FlxText(200, 200, 0, "FEVER VS ISO, FEVER WONT LET ISO HAVE FUN", 24);
+        run.setFormat(Paths.font("vcr.ttf"), 24, FlxColor.BLACK, CENTER, OUTLINE, FlxColor.BLACK);
+        run.scrollFactor.set();
+        //add(run);
+
         changeSelection();
     }
 
@@ -127,7 +193,36 @@ class CreditsState extends MusicBeatState
                 #end    
             }
         }
+
+        if (FlxG.keys.justPressed.ANY) 
+            {
+                var keyPressed = FlxKey.toStringMap.get(FlxG.keys.firstJustPressed()).toLowerCase();
+    
+                userInput += keyPressed;
+                trace(userInput);
+    
+                var matching:Bool = false;
+                for(i in 0...passwords.length)
+                {
+                    if(passwords[i].combo.startsWith(userInput))
+                    {
+                        matching = true;
+    
+                        if(passwords[i].combo == userInput)
+                        {
+                            passwords[i].callback();
+                            userInput = '';
+                            matching = false;
+                        }
+                    }
+                }
+    
+                if(!matching)
+                    userInput = '';
+            }
     }
+
+
 
     function changeSelection(change:Int = 0)
     {
@@ -153,4 +248,17 @@ class CreditsState extends MusicBeatState
                 FlxG.sound.music.fadeOut(2.2, 0.7);
         }
     }
+
+}
+
+class KeyCombo
+{
+	public var combo:String = '';
+	public var callback:Void->Void;
+
+	public function new(password:String, callback:Void->Void)
+	{
+		combo = password.toLowerCase();
+		this.callback = callback;
+	}
 }

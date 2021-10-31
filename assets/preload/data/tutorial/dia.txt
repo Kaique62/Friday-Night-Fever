@@ -1,42 +1,51 @@
 :bg:plainblacklol
 :song:heartbeat
-:deprisoner: I’ve been in this ridiculous outfit for over a month.
-:deprisoner: I can hardly understand a lick of what you guys are saying.
-:deprisoner: And everytime I think about escaping, the chains around my wrists send a very painful electric shock.
-:deprisoner: This one guard won't stop looking at me either.
-:deprisoner: Stop talking to me, or I’m going to try attacking the next person you bunk me with.
+:narrator: How long have I been here?
+:narrator: Days are getting longer. I can't tell how much time has passed.
+:narrator: Physically, I'm fine besides a few scratches.
+:narrator: But mentally? I think I'm going insane.
+:narrator: They force us to withstand extreme conditions everyday, but it's never consistent.
+:narrator: Some days I'm sweating my ass off. Other days, I have to deal with the harsh cold.
+:narrator: Oh good, just as I was collecting my thoughts, here comes one of the guards.
+:deprisoner: I thought I asked you "kind" folks to stop bothering me. I can hardly understand a lick of what you guys are saying.
+:deprisoner: Doesn't help either that everytime I think about escaping, the chains around my wrists send a very painful electric shock.
+:deprisoner: You guys sure know how to keep prisoners from having an opinion.
 :NPC: Bahaha!
-:NPC: You of all people should already know that doing that will send you straight to sleep.
-:NPC: Those handcuffs of yours are ready to administer a very strong sedative if you so much as think about it!
-:NPC: We wouldn’t want you to get hurt. That’ll look bad on the news.
-:NPC: Speaking of the news, tomorrow’s your trial. And I gotta say, it’ll be interesting.
-:NPC: We’ve never had a trial where we don’t know the NAME of the defendant! Honestly, I thought we’d torture that out of you quickly.
+:NPC: You forgot the part where those handcuffs of yours are ready to administer a very strong sedative if you so much as TRY to take them off.
+:NPC: We wouldn’t want you to get hurt struggling to get free. That’ll look bad for us on the news.
+:NPC: Speaking of, tomorrow’s your trial. And I gotta say, it’ll be quite the interesting case.
+:NPC: I mean, we’ve never had a trial where we don’t even know the NAME of the defendant! Honestly, I thought we’d torture that out of you quickly.
+:NPC: Come on, how about you just tell me? I won't bite.
+:deprisoner: There's a special place for you. Hell is too much of a paradise for your kind.
 :NPC: You demons are a nasty folk, aren’t you?
 :deprisoner: ...
-:NPC: I hurt your feelings didn’t I? Don’t worry, I'm sure what they'll do to you will make me seem like a joke.
+:NPC: I hurt your feelings didn’t I? Don’t worry, I'm sure what they'll do to you tomorrow will make me seem like a slap on the wrist.
 :narrator: . . .
-:narrator: . . .
-:narrator: Yo.
-:narrator: YO.
+:narrator: I've been in this prison for... a while now. I was caught doing the usual activity, but whoever brought me to prison REALLY must hate me, cause I don't even remember doing HALF the things I'm here for.
+:narrator: My name? I've kept it low, I don't want any of them to run it on their tongue.
+:narrator: But, I have to keep it close to me... my name... is...
+:narrator: Fever.
+:narrator: Fever...
+:narrator: FEVER!
 :fuckoff:
 :hidebg:
 :bg:room
 :song:milkteaINST
-:teasmile: Hey, wake up.
+:teasmile: Hey, wake up!
 :feverscaredjump: Huh? What?-
-:teasmile: You were having a nightmare. Something like that, at least.
-:feverconfuse: Oh.
-:fevertired: Thanks for waking me up.
-:fevertired: Where was I?
+:teasmile: You were having a nightmare. These have been ramping up, haven't they?
+:feverconfuse: Oh. Right.
+:fevertired: Thanks for waking me up, Tea.
+:fevertired: Uh, where was I?
 :teasmile: We were heading to bed?
 :feversmile : No no, I should finish this work. Keeping this shit piled up will annoy me.
-:teaannoy: So you can drool on those papers some more?
-:feverworry: Uh, no…
+:teaannoy: What, so you can drool on those papers some more? I can barely read whos name this is. You drowned them.
+:feverworry: Uh, oops...
 :teasmile: Ugh.
 :teasmile: There’s no need to rush things, you know.
 :fevertired: Yeah, yeah, I know. I wish I could sleep without jolting awake a few minutes in.
-:teathink: I still wish you’d tell me more.
+:teathink: And I still wish you’d tell me more.
 :fevertired: I will, soon. Sorry, it’s just annoying.
 :teaneutral: Well, I can think of a way we can help you relax.
 :fuckoff:
-:feversilly: Oh yeah? Sure.
+:feversilly: Oh yeah? It's been a while since we've done this, huh?

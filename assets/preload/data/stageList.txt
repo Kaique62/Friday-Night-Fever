@@ -1,6 +1,8 @@
 stage
 halloween
 halloween2
+hallowhalloween
+church
 philly
 week3stage
 limo

@@ -57,6 +57,7 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 		
+		
 		#if polymod
 		polymod.Polymod.init({modRoot: "mods", dirs: ['introMod']});
 		#end
@@ -121,8 +122,9 @@ class TitleState extends MusicBeatState
 		FlxG.switchState(new ChartingState());
 		#else
 		new FlxTimer().start(1, function(tmr:FlxTimer)
-		{
-			startIntro();
+		{	
+				startIntro();
+			
 		});
 		#end
 	}
@@ -325,14 +327,15 @@ class TitleState extends MusicBeatState
 
 	override function beatHit()
 	{
+
 		super.beatHit();
 
 		logoBl.animation.play('bump');
 
-		FlxG.log.add(curBeat);
-
 		if(curBeat > 7)
 			ngSpr.visible = false;
+
+		FlxG.log.add(curBeat);
 
 		switch (curBeat)
 		{
@@ -364,6 +367,7 @@ class TitleState extends MusicBeatState
 			case 16:
 				skipIntro();
 		}
+		
 	}
 
 	var skippedIntro:Bool = false;

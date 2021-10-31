@@ -21,6 +21,7 @@ class Note extends FlxSprite
 	public var noteData:Int = 0;
 	public var canBeHit:Bool = false;
 	public var tooLate:Bool = false;
+	public var animPlayed:Bool;
 	public var wasGoodHit:Bool = false;
 	public var prevNote:Note;
 	public var modifiedByLua:Bool = false;
@@ -34,12 +35,14 @@ class Note extends FlxSprite
 	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
+	public var type:Int = 0;
 
 	public var rating:String = "shit";
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, noteType:Int = 0)
 	{
 		super();
+		type = noteType;
 
 		if (prevNote == null)
 			prevNote = this;
@@ -59,24 +62,12 @@ class Note extends FlxSprite
 
 		var daStage:String = PlayState.curStage;
 
-		var noteStyle:String = switch(PlayState.SONG.song.toLowerCase())
-		{
-			case 'throw-it-back':
-				'throwIBNotes';
-			case 'party-crasher':
-				'partyCrasherNotes';
-			case 'bazinga':
-				'TakiNotes';
-			case 'crucify':
-				'TakiNotes';
-			default:
-				PlayState.SONG.noteStyle;
-		}
+		var noteStyle:String = PlayState.SONG.noteStyle;
 
 		switch (noteStyle)
 		{
-			case 'TakiNotes':
-				frames = Paths.getSparrowAtlas('customArrows/TakiNotes');
+			case 'paintingNotes':
+				frames = Paths.getSparrowAtlas('customArrows/paintingnotes');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -96,49 +87,6 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
-			case 'partyCrasherNotes':
-				frames = Paths.getSparrowAtlas('customArrows/partyCrasherNotes');
-
-				animation.addByPrefix('greenScroll', 'green0');
-				animation.addByPrefix('redScroll', 'red0');
-				animation.addByPrefix('blueScroll', 'blue0');
-				animation.addByPrefix('purpleScroll', 'purple0');
-
-				animation.addByPrefix('purpleholdend', 'pruple end hold');
-				animation.addByPrefix('greenholdend', 'green hold end');
-				animation.addByPrefix('redholdend', 'red hold end');
-				animation.addByPrefix('blueholdend', 'blue hold end');
-
-				animation.addByPrefix('purplehold', 'purple hold piece');
-				animation.addByPrefix('greenhold', 'green hold piece');
-				animation.addByPrefix('redhold', 'red hold piece');
-				animation.addByPrefix('bluehold', 'blue hold piece');
-
-				setGraphicSize(Std.int(width * 0.7));
-				updateHitbox();
-				antialiasing = true;
-			case 'throwIBNotes':
-				frames = Paths.getSparrowAtlas('customArrows/throwIBNotes');
-
-				animation.addByPrefix('greenScroll', 'green0');
-				animation.addByPrefix('redScroll', 'red0');
-				animation.addByPrefix('blueScroll', 'blue0');
-				animation.addByPrefix('purpleScroll', 'purple0');
-
-				animation.addByPrefix('purpleholdend', 'pruple end hold');
-				animation.addByPrefix('greenholdend', 'green hold end');
-				animation.addByPrefix('redholdend', 'red hold end');
-				animation.addByPrefix('blueholdend', 'blue hold end');
-
-				animation.addByPrefix('purplehold', 'purple hold piece');
-				animation.addByPrefix('greenhold', 'green hold piece');
-				animation.addByPrefix('redhold', 'red hold piece');
-				animation.addByPrefix('bluehold', 'blue hold piece');
-
-				setGraphicSize(Std.int(width * 0.7));
-				updateHitbox();
-				antialiasing = true;
-
 			case 'pixel':
 				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
 
@@ -166,7 +114,30 @@ class Note extends FlxSprite
 
 				updateHitbox();
 			default:
-				frames = Paths.getSparrowAtlas('NOTE_assets');
+				if(noteType == 0)
+				{
+					switch(PlayState.SONG.song.toLowerCase())
+					{
+						case 'throw-it-back':
+							frames = Paths.getSparrowAtlas('customArrows/throwIBNotes');
+						case 'party-crasher':
+							frames = Paths.getSparrowAtlas('customArrows/partyCrasherNotes');
+						case 'bazinga' | 'crucify':
+							frames = Paths.getSparrowAtlas('customArrows/TakiNotes');
+						default:
+							frames = Paths.getSparrowAtlas('NOTE_assets');
+					}
+				}
+				else
+				{
+					switch(noteType)
+					{
+						case 1: // hallow
+							frames = Paths.getSparrowAtlas('NOTE_HALLOW');
+						default:
+							frames = Paths.getSparrowAtlas('NOTE_assets');
+					}	
+				}
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');

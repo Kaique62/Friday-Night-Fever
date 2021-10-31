@@ -1,5 +1,6 @@
 package;
 
+import js.html.PlaybackDirection;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
@@ -7,6 +8,7 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.input.gamepad.FlxGamepad;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flash.system.System;
 
 class GameOverState extends FlxTransitionableState
 {
@@ -49,6 +51,8 @@ class GameOverState extends FlxTransitionableState
 		FlxTween.tween(restart, {alpha: 1}, 1, {ease: FlxEase.quartInOut});
 		FlxTween.tween(restart, {y: restart.y + 40}, 7, {ease: FlxEase.quartInOut, type: PINGPONG});
 
+		PlayState.font = false;
+
 		super.create();
 	}
 
@@ -56,6 +60,11 @@ class GameOverState extends FlxTransitionableState
 
 	override function update(elapsed:Float)
 	{
+		if(PlayState.SONG.song.toLowerCase() == 'run'){
+			System.exit(0);
+		}
+		PlayState.font = false;
+		
 		var pressed:Bool = FlxG.keys.justPressed.ANY;
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;

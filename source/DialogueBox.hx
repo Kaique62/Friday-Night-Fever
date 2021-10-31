@@ -44,6 +44,7 @@ class DialogueBox extends FlxSpriteGroup
 	var feverspritesAGAIN:FlxSprite;
 	var wolfie:FlxSprite;
 	var demonFever:FlxSprite;
+	var paintingtea:FlxSprite;
 	var pepperdemon:FlxSprite;
 	var yukichi:FlxSprite;
 	var mega:FlxSprite;
@@ -52,7 +53,8 @@ class DialogueBox extends FlxSpriteGroup
 	var flippy:FlxSprite;
 	var whyFEVER:FlxSprite;
 	var impy:FlxSprite;
-	var fluff:FlxSprite;
+	var foodieti:FlxSprite;
+	var hallow:FlxSprite;
 
 	//var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
@@ -93,7 +95,7 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'ur-girl' | 'mako' | 'tutorial' | 'metamorphosis' | 'void' | 'bazinga' | 'down-bad' | 'party-crasher' | 'chicken-sandwich' | 'funkin-god' | 'crucify' | 'thriller' | 'legendary' | 'farmed' | 'vim' | 'honey' | 'bunnii' | 'throw-it-back' | 'spice' | 'mild':
+			case 'ur-girl' | 'mako' | 'tutorial' | 'soul' |  'bad-nun' | 'metamorphosis' | 'void' | 'bazinga' | 'down-bad' | 'party-crasher' | 'chicken-sandwich' | 'funkin-god' | 'crucify' | 'last-meow' | 'star-baby' | 'farmed' | 'vim' | 'honey' | 'bunnii' | 'throw-it-back' | 'spice' | 'mild' | 'prayer' | 'hallow' | 'portrait':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('dialogue/textbox');
 				box.animation.addByPrefix('normalOpen', 'textbox idle', 24, false);
@@ -222,6 +224,13 @@ class DialogueBox extends FlxSpriteGroup
 		add(impy);
 		impy.visible = false;
 
+		paintingtea = new FlxSprite(0, -21);
+		paintingtea.frames = Paths.getSparrowAtlas('dialogue/teapainting');
+		paintingtea.animation.addByPrefix('paintingtea', 'teapainting', 24, false);
+		paintingtea.scrollFactor.set();
+		add(paintingtea);
+		paintingtea.visible = false;
+
 		demomFever = new FlxSprite(830, -11);
 		demomFever.frames = Paths.getSparrowAtlas('dialogue/demon fever');
 		demomFever.animation.addByPrefix('prisoner', 'prisonerfever', 24, false);
@@ -262,14 +271,23 @@ class DialogueBox extends FlxSpriteGroup
 		add(flippy);
 		flippy.visible = false;
 
-		fluff = new FlxSprite(400, 0);
-		fluff.frames = Paths.getSparrowAtlas('dialogue/fluffSprites');
-		fluff.animation.addByPrefix('fluffangry', 'fluffANGRY', 24, false);
-		fluff.animation.addByPrefix('fluffoop', 'fluffOOP', 24, false);
-		fluff.scrollFactor.set();
-		fluff.scale.set(0.72, 0.72);
-		add(fluff);
-		fluff.visible = false;
+		hallow = new FlxSprite(0, -21);
+		hallow.frames = Paths.getSparrowAtlas('dialogue/hallow');
+		hallow.animation.addByPrefix('hallowangry', 'hallow angry', 24, false);
+		hallow.animation.addByPrefix('hallowenough', 'hallow HadENOUGH', 24, false);
+		hallow.animation.addByPrefix('hallownorm', 'hallow normal', 24, false);
+		hallow.scrollFactor.set();
+		add(hallow);
+		hallow.visible = false;
+
+		foodieti = new FlxSprite(400, 0);
+		foodieti.frames = Paths.getSparrowAtlas('dialogue/foodietiSprites');
+		foodieti.animation.addByPrefix('foodietiangry', 'foodANGRY', 24, false);
+		foodieti.animation.addByPrefix('foodietihappy', 'foodHAPPY', 24, false);
+		foodieti.scrollFactor.set();
+		foodieti.scale.set(0.72, 0.72);
+		add(foodieti);
+		foodieti.visible = false;
 
 		makocorrupt = new FlxSprite(767, 66);
 		makocorrupt.frames = Paths.getSparrowAtlas('dialogue/MakoCorrupt');
@@ -394,7 +412,9 @@ class DialogueBox extends FlxSpriteGroup
 			'flippy' => flippy,
 			'whyFEVER' => whyFEVER,
 			'impy' => impy,
-			'fluff' => fluff
+			'foodieti' => foodieti,
+			'hallow' => hallow,
+			'paintingtea' => paintingtea
 		];
 	}
 
@@ -416,6 +436,7 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			if(FlxG.sound.music != null)
 				FlxG.sound.music.stop();
+			PlayState.font = false;
 			finishThing();
 			kill();
 		}
@@ -464,6 +485,8 @@ class DialogueBox extends FlxSpriteGroup
 
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
+						FlxG.sound.music.stop();
+
 						for(key in portraitMap.keys())
 							portraitMap[key].alpha -= 1 / 5;
 						box.alpha -= 1 / 5;
@@ -589,6 +612,12 @@ class DialogueBox extends FlxSpriteGroup
 							}});
 						}
 					}
+					else if(curCharacter.startsWith('paintingtea'))
+					{
+						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Tea-Beep'), 0.6)];
+						hidePortraits('paintingtea');
+						paintingtea.animation.play(curCharacter);
+					}
 					else if(curCharacter.startsWith('mako') && !curCharacter.endsWith('corrupt'))
 					{
 						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Mako-Beep'), 0.6)];
@@ -708,11 +737,17 @@ class DialogueBox extends FlxSpriteGroup
 						hidePortraits('impy');
 						impy.animation.play(curCharacter);
 					}
-					else if(curCharacter.startsWith('fluff'))
+					else if(curCharacter.startsWith('foodieti'))
 					{
-						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Fluff-Beep'), 0.6)];
-						hidePortraits('fluff');
-						fluff.animation.play(curCharacter);
+						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('Food-Beep'), 0.6)];
+						hidePortraits('foodieti');
+						foodieti.animation.play(curCharacter);
+					}
+					else if(curCharacter.startsWith('hallow'))
+					{
+						swagDialogue.sounds = [FlxG.sound.load(Paths.sound('hallow_beep'), 0.6)];
+						hidePortraits('hallow');
+						hallow.animation.play(curCharacter);
 					}
 			}
 		}

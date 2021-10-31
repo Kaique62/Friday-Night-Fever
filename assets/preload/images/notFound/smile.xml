@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="smile.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="iso idle0000" x="5" y="5" width="283" height="249" frameX="-50" frameY="-1" frameWidth="333" frameHeight="250"/>
+	<SubTexture name="iso idle0001" x="5" y="5" width="283" height="249" frameX="-50" frameY="-1" frameWidth="333" frameHeight="250"/>
+	<SubTexture name="iso idle0002" x="5" y="5" width="283" height="249" frameX="-50" frameY="-1" frameWidth="333" frameHeight="250"/>
+	<SubTexture name="iso idle0003" x="5" y="259" width="318" height="219" frameX="0" frameY="0" frameWidth="333" frameHeight="250"/>
+	<SubTexture name="iso idle0004" x="5" y="259" width="318" height="219" frameX="0" frameY="0" frameWidth="333" frameHeight="250"/>
+	<SubTexture name="iso idle0005" x="5" y="259" width="318" height="219" frameX="0" frameY="0" frameWidth="333" frameHeight="250"/>
+</TextureAtlas>

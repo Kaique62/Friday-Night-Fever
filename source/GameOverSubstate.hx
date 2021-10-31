@@ -5,6 +5,7 @@ import flixel.FlxObject;
 import flixel.FlxSubState;
 import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
+import flash.system.System;
 import flixel.util.FlxTimer;
 
 class GameOverSubstate extends MusicBeatSubstate
@@ -23,6 +24,14 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'bf-pixel' | 'bf-pixeldemon':
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
+			case 'bfdemoncesar':
+				if(PlayState.SONG.song.toLowerCase() == 'hallow' ||PlayState.SONG.song.toLowerCase() == 'portrait' ||PlayState.SONG.song.toLowerCase() == 'soul'){
+					daBf = 'bf-hallow-dead';
+				}
+				else
+				{
+					daBf = 'bf';		
+				}
 			default:
 				daBf = 'bf';
 		}
@@ -50,6 +59,12 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	override function update(elapsed:Float)
 	{
+		if(PlayState.SONG.song.toLowerCase() == 'run'){
+			System.exit(0);
+		}
+
+		PlayState.font = false;
+		
 		super.update(elapsed);
 
 		if (controls.ACCEPT)
@@ -65,6 +80,11 @@ class GameOverSubstate extends MusicBeatSubstate
 				FlxG.switchState(new StoryMenuState());
 			else
 				FlxG.switchState(new FreeplayState());
+
+			if (PlayState.isHalloweenFreeplay)
+				FlxG.switchState(new HalloweenState());
+			else 
+				FlxG.switchState(new FreeplayState());
 			PlayState.loadRep = false;
 		}
 
@@ -75,7 +95,15 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
-			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			
+			if(PlayState.SONG.song.toLowerCase() == 'hallow' ||PlayState.SONG.song.toLowerCase() == 'portrait' ||PlayState.SONG.song.toLowerCase() == 'soul'){
+				FlxG.sound.playMusic(Paths.music('gameOverHallow'));
+			}
+			else
+			{
+				FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			}
+		
 		}
 
 		if (FlxG.sound.music.playing)
@@ -100,7 +128,13 @@ class GameOverSubstate extends MusicBeatSubstate
 			isEnding = true;
 			bf.playAnim('deathConfirm', true);
 			FlxG.sound.music.stop();
-			FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
+		
+			if(PlayState.SONG.song.toLowerCase() == 'hallow' ||PlayState.SONG.song.toLowerCase() == 'portrait' ||PlayState.SONG.song.toLowerCase() == 'soul'){
+				FlxG.sound.play(Paths.music('gameOver-EndHallow'));
+			}
+			else{
+				FlxG.sound.play(Paths.music('gameOverEnd'));
+			}
 			new FlxTimer().start(0.7, function(tmr:FlxTimer)
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()

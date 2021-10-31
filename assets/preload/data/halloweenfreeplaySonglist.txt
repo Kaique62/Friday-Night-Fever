@@ -1,0 +1,7 @@
+Hallow:hallow:8
+Portrait:hallow:8
+Soul:hallow:8
+Hardships:tea-bat:8
+Prayer:monster:3
+Bad-Nun:monster:3
+Space-Demons:bdbfever:8

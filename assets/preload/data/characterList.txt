@@ -24,3 +24,6 @@ spirit
 makocorrupt
 yukichi
 peasus
+bfiso
+bfiso-pixel
+feverbob

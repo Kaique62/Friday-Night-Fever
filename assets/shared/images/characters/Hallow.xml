@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Hallow.png">
+	<!-- Created with Adobe Animate version 21.0.3.38773 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Hallow down0000" x="0" y="0" width="667" height="706" frameX="0" frameY="0" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0001" x="0" y="0" width="667" height="706" frameX="0" frameY="0" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0002" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0003" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0004" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0005" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0006" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0007" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0008" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0009" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow down0010" x="667" y="0" width="653" height="666" frameX="-17" frameY="-11" frameWidth="670" frameHeight="706"/>
+	<SubTexture name="Hallow idle0000" x="1320" y="0" width="795" height="541" frameX="-12" frameY="-7" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0001" x="1320" y="0" width="795" height="541" frameX="-12" frameY="-7" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0002" x="2115" y="0" width="811" height="549" frameX="0" frameY="-7" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0003" x="2115" y="0" width="811" height="549" frameX="0" frameY="-7" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0004" x="2926" y="0" width="784" height="552" frameX="-34" frameY="-4" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0005" x="2926" y="0" width="784" height="552" frameX="-34" frameY="-4" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0006" x="0" y="706" width="754" height="589" frameX="-61" frameY="0" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0007" x="754" y="706" width="755" height="632" frameX="-60" frameY="0" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0008" x="1509" y="706" width="755" height="631" frameX="-60" frameY="-1" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0009" x="2264" y="706" width="746" height="639" frameX="-69" frameY="-1" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0010" x="3010" y="706" width="746" height="637" frameX="-69" frameY="-3" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow idle0011" x="0" y="1345" width="750" height="633" frameX="-65" frameY="-3" frameWidth="818" frameHeight="640"/>
+	<SubTexture name="Hallow left0000" x="750" y="1345" width="615" height="534" frameX="0" frameY="0" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0001" x="750" y="1345" width="615" height="534" frameX="0" frameY="0" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0002" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0003" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0004" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0005" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0006" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0007" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0008" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow left0009" x="1365" y="1345" width="648" height="530" frameX="-7" frameY="-16" frameWidth="655" frameHeight="546"/>
+	<SubTexture name="Hallow right0000" x="2013" y="1345" width="875" height="528" frameX="0" frameY="0" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0001" x="2013" y="1345" width="875" height="528" frameX="0" frameY="0" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0002" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0003" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0004" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0005" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0006" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0007" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0008" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow right0009" x="2888" y="1345" width="803" height="518" frameX="-31" frameY="-17" frameWidth="875" frameHeight="535"/>
+	<SubTexture name="Hallow up0000" x="0" y="1978" width="508" height="816" frameX="0" frameY="0" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0001" x="0" y="1978" width="508" height="816" frameX="0" frameY="0" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0002" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0003" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0004" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0005" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0006" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0007" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0008" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+	<SubTexture name="Hallow up0009" x="508" y="1978" width="519" height="750" frameX="0" frameY="-19" frameWidth="519" frameHeight="816"/>
+</TextureAtlas>

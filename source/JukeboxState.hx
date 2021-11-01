@@ -122,6 +122,10 @@ class JukeboxState extends MusicBeatState
         overlay.antialiasing = true;
         add(overlay);
 
+        #if mobileC
+        addVirtualPad(LEFT_RIGHT, A_B);
+        #end
+
         changeSong();
     }
 

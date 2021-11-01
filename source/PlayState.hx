@@ -42,7 +42,7 @@ import lime.app.Application;
 import lime.graphics.Image;
 import lime.media.AudioContext;
 import lime.media.AudioManager;
-import lime.utils.Assets;
+import openfl.Assets;
 import openfl.Lib;
 import openfl.display.BitmapData;
 import openfl.display.BlendMode;
@@ -53,6 +53,9 @@ import openfl.geom.Matrix;
 import openfl.utils.AssetLibrary;
 import openfl.utils.AssetManifest;
 import openfl.utils.AssetType;
+import ModchartState;
+import sys.io.File;
+import ui.Mobilecontrols;
 
 using StringTools;
 
@@ -62,7 +65,7 @@ import openfl.filters.ShaderFilter;
 #if windows
 import Discord.DiscordClient;
 #end
-#if windows
+#if sys
 import Sys;
 import sys.FileSystem;
 #end
@@ -246,6 +249,11 @@ class PlayState extends MusicBeatState {
 
 	private var executeModchart = false;
 
+	#if mobileC
+	var mcontrols:Mobilecontrols; 
+	#end
+
+
 	// API stuff
 
 	public function addObject(object:FlxBasic) {
@@ -281,20 +289,28 @@ class PlayState extends MusicBeatState {
 		repPresses = 0;
 		repReleases = 0;
 
-		#if windows
-		executeModchart = FileSystem.exists(Paths.lua(PlayState.SONG.song.toLowerCase() + "/modchart"));
-		//if (storyDifficulty == 3) {
-			//executeModchart = FileSystem.exists(Paths.lua(PlayState.SONG.song.toLowerCase() + "/HARDPLUS"));
-		//}
-		#end
-		#if !cpp
-		executeModchart = false; // FORCE disable for non cpp targets
-		#end
+		executeModchart = FileSystem.exists(Paths.lua(PlayState.SONG.song.toLowerCase()  + "/modchart"));
+		
+		if (!executeModchart && openfl.utils.Assets.exists("assets/data/" + SONG.song.toLowerCase()  + "/modchart.lua"))
+		{
+			var path = Paths.luaAsset(SONG.song.toLowerCase()  + "/modchart");
+			var luaFile = openfl.Assets.getBytes(path);
+
+			FileSystem.createDirectory(Main.path + "assets");
+			FileSystem.createDirectory(Main.path + "assets/data");
+			FileSystem.createDirectory(Main.path + "assets/data/" + SONG.song.toLowerCase());
+
+
+			File.saveBytes(Paths.lua(SONG.song.toLowerCase()  + "/modchart"), luaFile);
+
+			executeModchart = FileSystem.exists(Paths.lua(SONG.song.toLowerCase()  + "/modchart"));
+		}
+
 
 		//if (storyDifficulty == 3) {
 		//	executeModchart = false;
 		//}
-		trace('Mod chart: ' + executeModchart + " - " + Paths.lua(PlayState.SONG.song.toLowerCase() + "/modchart"));
+	//	trace('Mod chart: ' + executeModchart + " - " + Main.path + Paths.lua(songToLowercase + "/modchart"));
 
 		//if (storyDifficulty == 3) {
 			//executeModchart = true;
@@ -1172,6 +1188,30 @@ class PlayState extends MusicBeatState {
 		scoreTxt.cameras = [camHUD];
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
+
+		#if mobileC
+			mcontrols = new Mobilecontrols();
+			switch (mcontrols.mode)
+			{
+				case VIRTUALPAD_RIGHT | VIRTUALPAD_LEFT | VIRTUALPAD_CUSTOM:
+					controls.setVirtualPad(mcontrols._virtualPad, FULL, NONE);
+				case HITBOX:
+					controls.setHitBox(mcontrols._hitbox);
+				default:
+			}
+			trackedinputs = controls.trackedinputs;
+			controls.trackedinputs = [];
+
+			var camcontrol = new FlxCamera();
+			FlxG.cameras.add(camcontrol);
+			camcontrol.bgColor.alpha = 0;
+			mcontrols.cameras = [camcontrol];
+
+			mcontrols.visible = false;
+
+			add(mcontrols);
+		#end
+
 		doof.cameras = [camHUD];
 
 		startingSong = true;
@@ -1384,17 +1424,23 @@ class PlayState extends MusicBeatState {
 
 	var luaWiggles:Array<WiggleEffect> = [];
 
-	#if windows
+	#if sys
 	public static var luaModchart:ModchartState = null;
 	#end
 
 	function startCountdown():Void {
+
+		#if mobileC
+		mcontrols.visible = true;
+		#end
+
+
 		inCutscene = false;
 
 		generateStaticArrows(0);
 		generateStaticArrows(1);
 
-		#if windows
+		#if sys
 		if (executeModchart) {
 			luaModchart = ModchartState.createModchartState();
 			luaModchart.executeState('start', [PlayState.SONG.song]);
@@ -1587,6 +1633,7 @@ class PlayState extends MusicBeatState {
 			songName.cameras = [camHUD];
 		}
 
+		
 		// Song check real quick
 		switch (curSong) {
 			case 'Bopeebo' | 'Philly' | 'Blammed' | 'Cocoa' | 'Eggnog':
@@ -2006,7 +2053,7 @@ class PlayState extends MusicBeatState {
 		if (FlxG.save.data.botplay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
 
-		#if windows
+		#if sys
 		if (executeModchart && luaModchart != null && songStarted) {
 			luaModchart.setVar('songPos', Conductor.songPosition);
 			luaModchart.setVar('hudZoom', camHUD.zoom);
@@ -2133,7 +2180,7 @@ class PlayState extends MusicBeatState {
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
 			FlxG.switchState(new ChartingState());
-			#if windows
+			#if sys
 			if (luaModchart != null) {
 				luaModchart.die();
 				luaModchart = null;
@@ -2830,13 +2877,15 @@ class PlayState extends MusicBeatState {
 	}
 
 	function endSong():Void {
-		if (!loadRep)
-			rep.SaveReplay(saveNotes);
-		else {
+
+		#if mobileC
+		mcontrols.visible = false;
+		#end
+
 			FlxG.save.data.botplay = false;
 			FlxG.save.data.scrollSpeed = 1;
 			FlxG.save.data.downscroll = false;
-		}
+
 
 		if (FlxG.save.data.fpsCap > 290)
 			(cast(Lib.current.getChildAt(0), Main)).setFPSCap(290);
@@ -2885,7 +2934,6 @@ class PlayState extends MusicBeatState {
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
 
 					if (SONG.validScore) {
-						NGio.unlockMedal(60961);
 						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 					}
 
@@ -3729,7 +3777,7 @@ class PlayState extends MusicBeatState {
 			resyncVocals();
 		}
 
-		#if windows
+		#if sys
 		if (executeModchart && luaModchart != null) {
 			luaModchart.setVar('curStep', curStep);
 			luaModchart.executeState('stepHit', [curStep]);
@@ -3809,7 +3857,7 @@ class PlayState extends MusicBeatState {
 			notes.sort(FlxSort.byY, (FlxG.save.data.downscroll ? FlxSort.ASCENDING : FlxSort.DESCENDING));
 		}
 
-		#if windows
+		#if sys
 		if (executeModchart && luaModchart != null) {
 			luaModchart.setVar('curBeat', curBeat);
 			luaModchart.executeState('beatHit', [curBeat]);

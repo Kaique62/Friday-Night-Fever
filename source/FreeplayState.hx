@@ -161,7 +161,11 @@ class FreeplayState extends MusicBeatState
 			trace(md);
 		 */
 
-		super.create();
+
+		 #if mobileC
+		 addVirtualPad(FULL, A_B);
+		 #end
+		 super.create();
 
 		userInput = secretCode;
 

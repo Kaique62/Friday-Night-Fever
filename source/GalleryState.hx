@@ -123,7 +123,9 @@ class GalleryState extends MusicBeatState
                 }
             }
         }
-
+        #if mobileC
+        addVirtualPad(LEFT_RIGHT, A);
+        #end
         changeSelection();
     }
 
@@ -131,7 +133,7 @@ class GalleryState extends MusicBeatState
     {
         super.update(elapsed);
 
-        if(controls.BACK) FlxG.switchState(new MainMenuState());
+        if(controls.ACCEPT) FlxG.switchState(new MainMenuState());
 
         if(allowInputs)
         {

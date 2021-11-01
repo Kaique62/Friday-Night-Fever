@@ -1,7 +1,6 @@
 package;
 
 import flixel.tweens.FlxEase;
-import io.newgrounds.objects.events.Result.ScoreResult;
 import flixel.tweens.FlxTween;
 import flash.text.TextField;
 import flixel.FlxG;

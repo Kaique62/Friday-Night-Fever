@@ -1,5 +1,6 @@
 package;
 
+import flixel.system.FlxSound;
 import flixel.FlxSprite;
 import flixel.util.FlxGradient;
 import flixel.tweens.FlxTween;
@@ -12,45 +13,50 @@ import Discord.DiscordClient;
 #end
 
 typedef JukeboxSong = {
-    var name:String;
+    var display:String;
     var ?song:String;
     var cover:String;
     var bpm:Float;
+    var ?special:Bool;
 }
 
 class JukeboxState extends MusicBeatState
 {
+    var vocals:FlxSound = new FlxSound();
+    var loaded:Bool = false;
+
     var screenbg:FlxSprite = new FlxSprite(0,0).makeGraphic(Std.int(FlxG.width), Std.int(FlxG.height), FlxColor.BLACK);
     var overlay:FlxSprite;
     var songText:AlphabetQuick;
     var lengthText:AlphabetQuick;
     var songs:Array<JukeboxSong> = [
-        {name:"Metamorphosis", cover:"week1", bpm:160},
-        {name:"Void", cover:"week1", bpm:140},
-        {name:"Down Bad", song:"down-bad", cover:"week1", bpm:180},
-        {name:"Star Baby",  song:'starbaby', cover:"week2", bpm:180},
-        {name:"Last Meow", song:'lastmeow', cover:"week2", bpm:195},
-        {name:"Bazinga", cover:"week2taki", bpm:190},
-        {name:"Crucify", cover:"week2taki", bpm:200},
-        {name:'Prayer', song:'prayer', cover:'taki', bpm:140},
-        {name:'Bad Nun', song:'badnun', cover:'taki', bpm:140},
-        {name:"Mako", song:"mako", cover:"week3", bpm:160},
-        {name:"VIM", song:"vimCurrent", cover:"week3", bpm:170},
-        {name:"Farmed", cover:"week3", bpm:160},
-        {name:"Honey", cover:"week4", bpm:130},
-        {name:"Bunnii", song:'bunni', cover:"week4", bpm:165},
-        {name:"Throw It Back", song:"throwItback", cover:"week4", bpm:160},
-        {name:'Mild', cover:'week5', bpm:100},
-        {name:'Spice', cover:'week5', bpm:150},
-        {name:'Party Crasher', song:'party', cover:'week5', bpm:159},
-        {name:'Ur Girl', song:'girl', cover:'week6', bpm:144},
-        {name:'Chicken Sandwich', song:'chicken', cover:'week6', bpm:150},
-        {name:'Funkin God', song:'funkingod', cover:'flippy', bpm:190},
-        {name:'Hallow', song:'hallow', cover:'hallow', bpm:130},
-        {name:'Portrait', song:'calamity', cover:'hallow', bpm:140},
-        {name:'Hardships', song:'hardships', cover:'hardships', bpm:120},
-        {name:'Beta VIP', song:'VIP', cover:'extras', bpm:155}
+        {display:"Metamorphosis", cover:"week1", bpm:160},
+        {display:"Void", cover:"week1", bpm:140},
+        {display:"Down Bad", cover:"week1", bpm:180},
+        {display:"Star Baby", cover:"week2", bpm:180},
+        {display:"Last Meow", cover:"week2", bpm:195},
+        {display:"Bazinga", cover:"week2taki", bpm:190},
+        {display:"Crucify", cover:"week2taki", bpm:200},
+        {display:'Prayer', cover:'taki', bpm:140},
+        {display:'Bad Nun', cover:'taki', bpm:140},
+        {display:"Mako", cover:"week3", bpm:160},
+        {display:"VIM", cover:"week3", bpm:170},
+        {display:"Farmed", cover:"week3", bpm:160},
+        {display:"Honey", cover:"week4", bpm:130},
+        {display:"Bunnii", cover:"week4", bpm:165},
+        {display:"Throw It Back", cover:"week4", bpm:160},
+        {display:'Mild', cover:'week5', bpm:100},
+        {display:'Spice', cover:'week5', bpm:150},
+        {display:'Party Crasher', cover:'week5', bpm:159},
+        {display:'Ur Girl', cover:'week6', bpm:144},
+        {display:'Chicken Sandwich', cover:'week6', bpm:150},
+        {display:'Funkin God', cover:'flippy', bpm:190},
+        {display:'Hallow', cover:'hallow', bpm:130},
+        {display:'Portrait', song:'calamity', cover:'hallow', bpm:140},
+        {display:'Hardships', cover:'hardships', bpm:120},
+        {display:'Beta VIP', song:'VIP', cover:'extras', bpm:155, special:true}
     ];
+
     var curSelected:Int = 0;
     private var screen:FlxCamera;
 	private var cam:FlxCamera;
@@ -58,6 +64,9 @@ class JukeboxState extends MusicBeatState
 
     override function create()
     {
+        super.create();
+
+        FlxG.autoPause = false;
         #if windows
         DiscordClient.changePresence("In the Jukebox Menu, Listening to music", null);
         #end
@@ -69,10 +78,9 @@ class JukeboxState extends MusicBeatState
 		FlxG.cameras.add(cam);
 		FlxCamera.defaultCameras = [cam];
 
+        FlxG.sound.list.add(vocals);
+
         persistentUpdate = true;
-
-        super.create();
-
 
         screenbg = FlxGradient.createGradientFlxSprite(Std.int(FlxG.width),  Std.int(FlxG.height), [FlxColor.fromString('#58FFC7'), FlxColor.fromString('#C2FF8C')]);
         add(screenbg);
@@ -88,7 +96,7 @@ class JukeboxState extends MusicBeatState
         text.cameras = [screen];
         add(text);
 
-        songText = new AlphabetQuick(0, Std.int(FlxG.height * 0.65), songs[0].name, {bold:true,size:0.6,spacing:4,screenCenterX:true});
+        songText = new AlphabetQuick(0, Std.int(FlxG.height * 0.65), songs[0].display, {bold:true,size:0.6,spacing:4,screenCenterX:true});
         songText.cameras = [screen];
         add(songText);
 
@@ -127,21 +135,31 @@ class JukeboxState extends MusicBeatState
             changeSong(controls.LEFT_P ? -1 : 1);
 
         if(controls.BACK)
+        {
+            FlxG.autoPause = true;
             FlxG.switchState(new MainMenuState());
+        }
 
         if(FlxG.sound.music != null)
         {
             Conductor.songPosition = FlxG.sound.music.time;
-            if(controls.ACCEPT)
+            if(controls.ACCEPT && loaded)
             {
                 if(!FlxG.sound.music.playing)
                 {
                     FlxG.sound.music.play();
+
+                    if(!songs[curSelected].special)
+                    {
+                        vocals.play();
+                        vocals.time = FlxG.sound.music.time;
+                    }
                 }
                 else
                 {
                     FlxG.sound.music.pause();
-                    songText.changeColor(FlxColor.WHITE);
+                    if(!songs[curSelected].special)
+                        vocals.pause();
                 }
             }
         }
@@ -164,42 +182,62 @@ class JukeboxState extends MusicBeatState
             cover.loadGraphic(Paths.image('covers/${songs[curSelected].cover}', 'preload'));
             cover.screenCenter(X);
         }
-        else
-        {
-            trace('cover does not exist for ${songs[curSelected].name}');
-        }
 
-        songText.text = '< ${songs[curSelected].name} >';
+        songText.text = '< ${songs[curSelected].display} >';
         Conductor.changeBPM(songs[curSelected].bpm);
        
-        var songName:String = songs[curSelected].song == null ? songs[curSelected].name.toLowerCase() : songs[curSelected].song;
-        trace('NEXT SONG: $songName');
+        var songName:String = songs[curSelected].special ? songs[curSelected].song : StringTools.replace(songs[curSelected].display.toLowerCase(), ' ', '-');
+        trace('Loading Song: $songName');
 
-        if(!loadedSongs.contains(songName))
+        var isSys:Bool = false;
+        #if sys
+        isSys = true;
+        #end
+
+        if(loadedSongs.contains(songName) || !isSys)
         {
-            loadedSongs.push(songName);
-            #if sys
-            sys.thread.Thread.create(() -> {
-                FlxG.sound.playMusic(Paths.music(songName), 0.75);
-                FlxG.sound.music.pause();
-                lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
-            });
-            #else
-            FlxG.sound.playMusic(Paths.music(songName), 0.75);
-            FlxG.sound.music.pause();
-            lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
-            #end
+            loadSong(songName);
         }
         else
         {
-            FlxG.sound.playMusic(Paths.music(songName), 0.75);
-            FlxG.sound.music.pause();
-            lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:${Std.int(FlxG.sound.music.length / 1000) % 60}';
+            #if sys
+            sys.thread.Thread.create(() -> {
+                loadSong(songName);
+            });
+            #end
         }
     }
 
     override function beatHit()
     {
         screen.zoom += 0.015;
+    }
+
+    function loadSong(songName:String)
+    {
+        loaded = false;
+        if(FlxG.sound.music != null)
+        {
+            FlxG.sound.music.stop();
+
+            if(vocals.playing)
+                vocals.stop();
+        }
+
+        lengthText.text = "Loading song...";
+        FlxG.sound.music.loadEmbedded(songs[curSelected].special ? Paths.music(songName) : Paths.inst(songName));
+
+        if(!songs[curSelected].special)
+            vocals.loadEmbedded(Paths.voices(songName));
+
+        loaded = true;
+
+        var seconds:String = '' + Std.int(FlxG.sound.music.length / 1000) % 60;
+
+        if(seconds.length == 1)
+            seconds = '0' + seconds;
+
+        lengthText.text = 'Length : ${Std.int(FlxG.sound.music.length / 1000 / 60)}:$seconds';
+        loadedSongs.push(songName);
     }
 }

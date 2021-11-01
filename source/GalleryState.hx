@@ -43,7 +43,7 @@ class GalleryState extends MusicBeatState
         new GalleryImage('gallery/aLazy_Artist', 'Fanart of Down-bad Peakek and Cesar made by @aLazy_Artist on twitter!', 'Fanart'),
         new GalleryImage('gallery/0M0MARI', 'Fanart of Taki made by @0M0MARI on twitter!', 'Fanart'),
         new GalleryImage('gallery/corruptcrumb', 'Fanart of Taki made by @CorruptCrumb on twitter!', 'Fanart'),
-        new GalleryImage('gallery/gingmiluki', 'Fanart of Taki made by @GingaMiluki on twitter!', 'Fanart'),
+        new GalleryImage('gallery/gingamiluki', 'Fanart of Taki made by @GingaMiluki on twitter!', 'Fanart'),
         new GalleryImage('gallery/r0llindownhill', 'Fanart of Week 5 made by @R0llinDownHill on twitter!', 'Fanart'),
         new GalleryImage('gallery/basmega', 'Fanart of Mega made by @Leena73784282 on twitter!', 'Fanart'),
         new GalleryImage('gallery/bastaki', 'Fanart of Taki made by @Leena73784282 on twitter!', 'Fanart'),
@@ -171,7 +171,7 @@ class GalleryState extends MusicBeatState
         image.scale.x = 1;
         image.scale.y = 1;
         
-        while(image.width > 450)
+        while(image.width > 485)
         {
             image.scale.x -= 0.05;
             image.scale.y -= 0.05;
